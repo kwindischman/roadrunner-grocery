@@ -1,11 +1,13 @@
-package com.cs3773.roadrunnergrocery;
+package com.cs3773.roadrunnergrocery.Activities;
 
 import android.os.Bundle;
+
+import com.cs3773.roadrunnergrocery.R;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class OrderActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
 
     // Variables here
 
@@ -13,7 +15,7 @@ public class OrderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order);
+        setContentView(R.layout.activity_settings);
     }
 
     //Other methods here

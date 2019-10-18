@@ -1,6 +1,8 @@
-package com.cs3773.roadrunnergrocery;
+package com.cs3773.roadrunnergrocery.Activities;
 
 import android.os.Bundle;
+
+import com.cs3773.roadrunnergrocery.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 

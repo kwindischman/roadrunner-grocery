@@ -1,8 +1,10 @@
-package com.cs3773.roadrunnergrocery;
+package com.cs3773.roadrunnergrocery.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.cs3773.roadrunnergrocery.R;
 
 //TODO: Possibly remove the SearchActivity and ItemInfoActivity
 // to use fragments instead
