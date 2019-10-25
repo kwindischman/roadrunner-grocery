@@ -3,7 +3,7 @@ Customer-side grocery shopping application made for UTSA-CS3773, Software Engine
 
 Authors:
 - Cheyenne Sanchez - https://github.com/cza267
-- David Crouch - 
+- David Crouch - https://github.com/dcrouch24
 - Kai Windischman - https://github.com/kwindischman 
 - Logan Guardiola - https://github.com/kbo256
 - Marcus Moffett - 
