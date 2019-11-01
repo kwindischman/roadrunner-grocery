@@ -1,6 +1,6 @@
 package com.cs3773.roadrunnergrocery.Models;
 
-public class ItemModel {
+public class Product {
 
     // Class Variables here
 

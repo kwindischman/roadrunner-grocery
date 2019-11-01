@@ -1,6 +1,6 @@
 package com.cs3773.roadrunnergrocery.Models;
 
-public class OrderModel {
+public class Cart {
 
     // Class Variables here
 
