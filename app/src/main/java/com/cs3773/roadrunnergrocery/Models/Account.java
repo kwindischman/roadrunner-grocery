@@ -1,6 +1,6 @@
 package com.cs3773.roadrunnergrocery.Models;
 
-public class CardModel {
+public class Account {
 
     // Class Variables here
 
