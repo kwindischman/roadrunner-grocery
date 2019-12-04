@@ -13,11 +13,11 @@
         android:layout_margin="5dp"
         android:background="@drawable/custom_search_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/image"
+        app:layout_constraintEnd_toStartOf="@id/account_icon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/account_icon"
         android:layout_width="64dp"
         android:layout_height="0dp"
         app:layout_constraintHorizontal_bias="1"
