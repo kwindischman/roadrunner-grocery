@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.SearchView;
 
 import com.cs3773.roadrunnergrocery.R;
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setupCartIcon();
         setupProducts();
         setupPromotions();
+        setupSearch();
 
         // TODO: Set up the two Promotion views with random items
     }
@@ -70,5 +72,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, PromotionActivity.class);
             startActivity(intent);
         });
+    }
+
+    private void setupSearch() {
+        // TODO: Implement some sort of search system
     }
 }
