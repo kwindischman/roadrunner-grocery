@@ -65,5 +65,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupPromotions() {
         // TODO: Grab two random promotions and use their info to make the views
+
+        findViewById(R.id.see_more).setOnClickListener(v -> {
+            Intent intent = new Intent(this, PromotionActivity.class);
+            startActivity(intent);
+        });
     }
 }
