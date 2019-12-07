@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RoadrunnerGrocery</string>
+    <string name="products">Products</string>
+    <string name="promotions">Promotions</string>
+    <string name="promo_text_placeholder">Promotion description here</string>
+    <string name="frozen">Frozen</string>
+    <string name="snacks">Snacks</string>
+    <string name="meat">Meat</string>
+    <string name="produce">Produce</string>
+    <string name="see_more">See More</string>
 </resources>
