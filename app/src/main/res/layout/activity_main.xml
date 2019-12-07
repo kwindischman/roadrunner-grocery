@@ -40,7 +40,112 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Promotions"
+            android:text="@string/products"
+            android:textColor="@color/black"
+            android:textSize="32sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/product_image_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingEnd="4dp"
+                android:paddingRight="4dp"
+                android:src="@drawable/placeholder_image"
+                app:layout_constraintEnd_toStartOf="@+id/product_image_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/product_text_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="4dp"
+                android:paddingRight="4dp"
+                android:text="@string/promo_text_placeholder"
+                app:layout_constraintEnd_toStartOf="@id/product_text_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_image_1" />
+
+            <ImageView
+                android:id="@+id/product_image_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingStart="4dp"
+                android:paddingLeft="4dp"
+                android:src="@drawable/placeholder_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/product_image_1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/product_text_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="4dp"
+                android:paddingLeft="4dp"
+                android:text="@string/promo_text_placeholder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/product_text_1"
+                app:layout_constraintTop_toBottomOf="@id/product_image_2" />
+
+            <ImageView
+                android:id="@+id/product_image_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingEnd="4dp"
+                android:paddingRight="4dp"
+                android:src="@drawable/placeholder_image"
+                app:layout_constraintBottom_toTopOf="@id/product_text_3"
+                app:layout_constraintEnd_toStartOf="@+id/product_image_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_text_1" />
+
+            <TextView
+                android:id="@+id/product_text_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="4dp"
+                android:paddingRight="4dp"
+                android:text="@string/promo_text_placeholder"
+                app:layout_constraintEnd_toStartOf="@id/product_text_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_image_3" />
+
+            <ImageView
+                android:id="@+id/product_image_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingStart="4dp"
+                android:paddingLeft="4dp"
+                android:src="@drawable/placeholder_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/product_image_3"
+                app:layout_constraintTop_toBottomOf="@id/product_text_2" />
+
+            <TextView
+                android:id="@+id/product_text_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="4dp"
+                android:paddingLeft="4dp"
+                android:text="@string/promo_text_placeholder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/product_text_3"
+                app:layout_constraintTop_toBottomOf="@id/product_image_4" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/promotions"
             android:textColor="@color/black"
             android:textSize="32sp" />
 
@@ -68,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:paddingEnd="4dp"
                 android:paddingRight="4dp"
-                android:text="Promo 1 description"
+                android:text="@string/promo_text_placeholder"
                 app:layout_constraintEnd_toStartOf="@id/promo_text_2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/promo_image_1" />
@@ -91,7 +196,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="4dp"
                 android:paddingLeft="4dp"
-                android:text="Promo 2 description"
+                android:text="@string/promo_text_placeholder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/promo_text_1"
                 app:layout_constraintTop_toBottomOf="@id/promo_image_2" />
