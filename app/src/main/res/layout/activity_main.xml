@@ -6,21 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity">
 
+    <ImageView
+        android:id="@+id/account_icon"
+        android:layout_width="64dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_account_box"
+        app:layout_constraintBottom_toBottomOf="@id/search"
+        app:layout_constraintEnd_toStartOf="@id/search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintTop_toTopOf="@id/search" />
+
     <SearchView
         android:id="@+id/search"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:background="@drawable/custom_search_view"
-        app:layout_constraintEnd_toStartOf="@id/account_icon"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/account_icon"
+        app:layout_constraintEnd_toStartOf="@id/cart_icon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/account_icon"
+        android:id="@+id/cart_icon"
         android:layout_width="64dp"
         android:layout_height="0dp"
-        android:src="@drawable/ic_account_box"
+        android:src="@drawable/ic_shopping_cart_black_24dp"
         app:layout_constraintBottom_toBottomOf="@id/search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
