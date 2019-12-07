@@ -49,6 +49,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <!-- TODO Grab two random promos and put their product image/desc here -->
             <ImageView
                 android:id="@+id/promo_image_1"
                 android:layout_width="0dp"
