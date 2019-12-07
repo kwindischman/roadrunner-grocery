@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     // Class variables here
     private ImageView mAccountIcon;
 
+
     // Lifecycle methods here
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +21,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setupAccountIcon();
+        setupCartIcon();
         setupProducts();
         setupPromotions();
 
         // TODO: Set up the two Promotion views with random items
     }
+
 
     // Other methods here
     private void setupAccountIcon() {
@@ -32,6 +35,15 @@ public class MainActivity extends AppCompatActivity {
 
         mAccountIcon.setOnClickListener(v -> {
             Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    private void setupCartIcon() {
+        mAccountIcon = findViewById(R.id.cart_icon);
+
+        mAccountIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CartActivity.class);
             startActivity(intent);
         });
     }
