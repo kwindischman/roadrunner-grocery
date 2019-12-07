@@ -6,6 +6,6 @@ Authors:
 - David Crouch - https://github.com/dcrouch24
 - Kai Windischman - https://github.com/kwindischman 
 - Logan Guardiola - https://github.com/kbo256
-- Marcus Moffett - 
+- Marcus Moffett - https://github.com/moffettm
   
 vvv Documentation vvv
