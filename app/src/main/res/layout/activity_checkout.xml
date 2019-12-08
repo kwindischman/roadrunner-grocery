@@ -15,11 +15,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Total Price = "
+            android:text="Checkout"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="20dp" />
 
     </RelativeLayout>
-    
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:text="Confirm"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        />
+
 </RelativeLayout>
