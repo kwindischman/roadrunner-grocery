@@ -1,13 +1,12 @@
 package com.cs3773.roadrunnergrocery.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.SearchView;
 
 import com.cs3773.roadrunnergrocery.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
