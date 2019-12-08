@@ -45,6 +45,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         // set price here
         TextView quantity = holder.quantity;
         // set quantity here
+
+        holder.removeIcon.setOnClickListener(v -> {
+            mProductList.remove(product);
+            notifyDataSetChanged();
+        });
     }
 
     @Override
@@ -55,6 +60,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;
+        ImageView removeIcon;
         TextView name;
         TextView quantity;
         TextView price;
@@ -63,7 +69,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             super(itemView);
 
             image = itemView.findViewById(R.id.cart_product_image);
-            image.setImageResource(R.drawable.placeholder_image);
+            removeIcon = itemView.findViewById(R.id.cart_remove_icon);
             name = itemView.findViewById(R.id.cart_product_name);
             quantity = itemView.findViewById(R.id.cart_quantity);
             price = itemView.findViewById(R.id.cart_total_price);
