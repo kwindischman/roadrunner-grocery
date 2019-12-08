@@ -51,6 +51,8 @@
         app:layout_constraintVertical_bias="0.0"
         tools:text="Quantity:" />
 
+    <!-- Add a view/views here to let user increase/decrease the quantity of the product -->
+
     <TextView
         android:id="@+id/cart_total_price"
         android:layout_width="0dp"
