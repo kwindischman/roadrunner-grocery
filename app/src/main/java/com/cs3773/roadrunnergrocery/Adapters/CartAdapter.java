@@ -17,10 +17,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
-    private List<ProductPair> mProductList;
+    private List<ProductPair> mProductPairList;
 
     public CartAdapter(List<ProductPair> productList) {
-        mProductList = productList;
+        mProductPairList = productList;
     }
 
     @NonNull
@@ -34,7 +34,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CartAdapter.ViewHolder holder, int position) {
-        ProductPair product = mProductList.get(position);
+        ProductPair product = mProductPairList.get(position);
 
         // TODO: Set up the viewHolders with product information once we have products
         ImageView image = holder.image;
@@ -47,14 +47,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         // set quantity here
 
         holder.removeIcon.setOnClickListener(v -> {
-            mProductList.remove(product);
+            mProductPairList.remove(product);
             notifyDataSetChanged();
         });
     }
 
     @Override
     public int getItemCount() {
-        return mProductList.size();
+        return mProductPairList.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
