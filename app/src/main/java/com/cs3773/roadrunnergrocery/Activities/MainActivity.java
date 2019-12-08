@@ -3,6 +3,7 @@ package com.cs3773.roadrunnergrocery.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.SearchView;
 
 import com.cs3773.roadrunnergrocery.R;
 
@@ -75,5 +76,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupSearch() {
         // TODO: Implement some sort of search system
+        SearchView searchView = findViewById(R.id.search);
+
+        // TODO: Change this from onClickListener to a listener that activates when user searches
+        //  for a term
+        searchView.setOnClickListener(v -> {
+            Intent intent = new Intent(this, SearchActivity.class);
+            startActivity(intent);
+        });
     }
 }
