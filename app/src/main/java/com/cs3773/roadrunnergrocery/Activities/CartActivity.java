@@ -1,6 +1,8 @@
 package com.cs3773.roadrunnergrocery.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.cs3773.roadrunnergrocery.Adapters.CartAdapter;
 import com.cs3773.roadrunnergrocery.Models.ProductPair;
@@ -25,6 +27,24 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
+        setupRecyclerView();
+        setupCheckoutButton();
+
+    }
+
+    //Other methods here
+    private void setupCheckoutButton() {
+        findViewById(R.id.checkout_layout).setOnClickListener(v -> {
+            if (mProducts.size() > 0) {
+                Intent intent = new Intent(this, CheckoutActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Your cart is empty!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void setupRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.cart_recycler);
 
         // TODO: Get list of customers ProductPairs in their cart
@@ -36,7 +56,4 @@ public class CartActivity extends AppCompatActivity {
         recyclerView.setAdapter(cartAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
-
-    //Other methods here
-
 }
