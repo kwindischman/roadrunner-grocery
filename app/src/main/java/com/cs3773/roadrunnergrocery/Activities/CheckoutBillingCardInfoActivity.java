@@ -13,11 +13,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class CheckoutBillingActivity extends AppCompatActivity {
+public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
 
     private EditText cardName, cardNumber, expDate, cvv;
     private Button confirmBillingOrderButton;
-    CheckBox checkBox;
+    private CheckBox checkBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +89,7 @@ public class CheckoutBillingActivity extends AppCompatActivity {
                     // check if to reuse shipping address as billing address
                     if(checkBox.isChecked())
                     {
+                        //TODO: confirmBillingOrderButton.setText("Confirm");
                         confirmFinalOrder();
                     }
                     else
@@ -101,7 +102,7 @@ public class CheckoutBillingActivity extends AppCompatActivity {
 
             private void billingAddress()
             {
-                Intent intent = new Intent(CheckoutBillingActivity.this, BillingAddressActivity.class);
+                Intent intent = new Intent(CheckoutBillingCardInfoActivity.this, BillingAddressActivity.class);
                 startActivity(intent);
             }
 
@@ -128,7 +129,7 @@ public class CheckoutBillingActivity extends AppCompatActivity {
                 toast.show();
 
                 // return user to home menu
-                Intent intent = new Intent(CheckoutBillingActivity.this, MainActivity.class);
+                Intent intent = new Intent(CheckoutBillingCardInfoActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

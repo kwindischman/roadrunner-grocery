@@ -14,9 +14,6 @@ import com.cs3773.roadrunnergrocery.R;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 public class CheckoutActivity extends AppCompatActivity {
 
     // Variables here
@@ -134,7 +131,7 @@ public class CheckoutActivity extends AppCompatActivity {
                 // TODO: save order to database if created and clear cart for next order
 
                 // return user to home menu
-                Intent intent = new Intent(CheckoutActivity.this, CheckoutBillingActivity.class);
+                Intent intent = new Intent(CheckoutActivity.this, CheckoutBillingCardInfoActivity.class);
                 startActivity(intent);
             }
         });
