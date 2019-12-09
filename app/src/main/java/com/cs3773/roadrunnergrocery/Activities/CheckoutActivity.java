@@ -38,12 +38,12 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                //Check();
+                Check();
             }
 
             private void Check()
             {
-                /*
+
                 if(TextUtils.isEmpty(nameEditText.getText().toString()))
                 {
                     Toast.makeText(this, "Please enter full name.", Toast.LENGTH_SHORT).show();
@@ -71,9 +71,9 @@ public class CheckoutActivity extends AppCompatActivity {
 
                 else
                 {
-                    conf
+                    confirmOrderButton();
                 }
-                */
+
             }
         });
 
