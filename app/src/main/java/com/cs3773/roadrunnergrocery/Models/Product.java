@@ -5,15 +5,21 @@ public class Product {
     // Class Variables here
     private String name;
     private String description;
+    private String imageURL;
     private double price;
     private int pid;
 
     // Constructor(s) here
-    public Product(String name, String description, double price, int pid) {
+    public Product(String name, String description, double price, int pid, String imageURL) {
         this.name = name;
         this.description = description;
+        this.imageURL = imageURL;
         this.price = price;
         this.pid = pid;
+    }
+
+    public Product(String name, String description, double price, int pid) {
+        this(name, description, price, pid, "@drawable/placeholder_image.webp");
     }
 
 
@@ -48,5 +54,13 @@ public class Product {
 
     public void setPid(int pid) {
         this.pid = pid;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }
