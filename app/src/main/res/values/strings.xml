@@ -31,5 +31,6 @@
     <string name="zipCode">Zip Code</string>
     <string name="cardNumber">Card Number</string>
     <string name="update">UPDATE</string>
+    <string name="home">Home</string>
 
 </resources>
