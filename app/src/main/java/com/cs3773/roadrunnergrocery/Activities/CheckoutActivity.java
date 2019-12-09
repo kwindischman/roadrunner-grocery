@@ -40,7 +40,8 @@ public class CheckoutActivity extends AppCompatActivity {
         stateEditText = (EditText) findViewById(R.id.stateText);
 
         //Other methods here
-        confirmOrderButton.setOnClickListener(new View.OnClickListener() {
+        confirmOrderButton.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v)
             {
@@ -119,6 +120,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
             private void confirmOrder()
             {
+                /*
                 final String saveCurrentDate, saveCurrentTime;
                 Calendar calForDate = Calendar.getInstance();
 
@@ -127,18 +129,12 @@ public class CheckoutActivity extends AppCompatActivity {
 
                 SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
                 saveCurrentTime = currentDate.format(calForDate.getTime());
+                */
 
                 // TODO: save order to database if created and clear cart for next order
 
-                // Give user confirmation on order
-                Context context = getApplicationContext();
-                CharSequence text = "Order Confirmed";
-                int duration = Toast.LENGTH_LONG;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-
                 // return user to home menu
-                Intent intent = new Intent(CheckoutActivity.this, MainActivity.class);
+                Intent intent = new Intent(CheckoutActivity.this, CheckoutBillingActivity.class);
                 startActivity(intent);
             }
         });

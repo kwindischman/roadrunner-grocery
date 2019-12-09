@@ -9,10 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/colorPrimaryDark"
-        android:layout_alignParentTop="true">Zzz
+        android:layout_alignParentTop="true">
 
         <TextView
-            android:id="@+id/checkoutTxt"
+            android:id="@+id/checkoutTxt_billingPage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -24,7 +24,7 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/confirm_order_button"
+        android:id="@+id/finalConfirm_order_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -40,62 +40,63 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="100dp"
-        android:text="Shipping Details:"
+        android:text="Card Information:"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
     <EditText
-        android:id="@+id/nameText"
+        android:id="@+id/cardNameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="150dp"
-        android:hint="@string/FullName" />
+        android:hint="@string/cardName" />
 
     <EditText
-        android:id="@+id/phoneNumberText"
+        android:id="@+id/cardNumberText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="200dp"
-        android:hint="@string/phoneNUmber" />
+        android:hint="@string/cardNumber" />
 
     <EditText
-        android:id="@+id/addressText"
+        android:id="@+id/expDateText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="250dp"
-        android:hint="@string/address" />
+        android:hint="@string/expDate" />
 
     <EditText
-        android:id="@+id/cityAddressText"
+        android:id="@+id/cvvText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="300dp"
-        android:hint="@string/cityAddress" />
+        android:hint="@string/cvv" />
 
-    <EditText
-        android:id="@+id/zipCodeText"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="350dp"
-        android:hint="@string/zipCode" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="380dp"
+        android:text="Use Shipping Address as the Billing Address:"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/stateText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <CheckBox
+        android:id="@+id/shippingAsBillingCheckbox"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="400dp"
-        android:hint="@string/stateAbbr" />
+        android:layout_marginTop="440dp"/>
 
 </RelativeLayout>
