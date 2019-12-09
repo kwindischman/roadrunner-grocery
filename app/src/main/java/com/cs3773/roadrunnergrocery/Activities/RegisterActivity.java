@@ -16,14 +16,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.cs3773.roadrunnergrocery.R;
 
-
-
-
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText usernameT, passwordT, emailT, phoneT, streetT;
+    private EditText usernameT, passwordT, emailT, cardNumT, streetT;
     private EditText stateT, cityT, zipCodeT, aptNumT;
-    private String username, password, emailAdd, phoneNum, streetAdd;
+    private String username, password, emailAdd, cardNum, streetAdd;
     private String state, zipCode, aptNum, cityStr;
     public static final String PREFERENCE = "preference";
     public static final String PREF_NAME = "name";
@@ -46,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
         TextView loginT = findViewById(R.id.loginRText);
         TextView asGuestT = findViewById(R.id.asGuestText);
         emailT = findViewById(R.id.emailText);
-        phoneT = findViewById(R.id.phoneNumber);
+        cardNumT = findViewById(R.id.cardNumber);
         streetT = findViewById(R.id.streetAddress);
         aptNumT = findViewById(R.id.aptNum);
         stateT = findViewById(R.id.state);
@@ -61,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
                 editor.putString(PREF_NAME,username);
                 editor.putString(PREF_PASS,password);
                 editor.putString(PREF_EMAIL,emailAdd);
-                editor.putString(PREF_PHONE,phoneNum);
+                editor.putString(PREF_PHONE,cardNum);
                 editor.putString(PREF_STREET,streetAdd);
                 editor.putString(PREF_STATE,state);
                 editor.putString(PREF_APT,aptNum);
@@ -88,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
         username = usernameT.getText().toString().trim();
         password = passwordT.getText().toString().trim();
         emailAdd = emailT.getText().toString().trim();
-        phoneNum = phoneT.getText().toString().trim();
+        cardNum = cardNumT.getText().toString().trim();
         streetAdd = streetT.getText().toString().trim();
         aptNum = aptNumT.getText().toString().trim();
         state = stateT.getText().toString().trim();
