@@ -12,6 +12,7 @@
         android:layout_alignParentTop="true">
 
         <TextView
+            android:id="@+id/checkoutTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -32,5 +33,72 @@
         android:textColor="@android:color/white"
         android:textSize="20dp"
         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="140dp"
+        android:text="Shipping Details:"
+        android:textSize="20dp"
+        />
+
+    <EditText
+        android:id="@+id/nameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="200dp"
+        android:hint="@string/FullName" />
+        />
+
+    <EditText
+        android:id="@+id/phoneNumberText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="250dp"
+        android:hint="@string/phoneNUmber" />
+
+    <EditText
+        android:id="@+id/addressText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="300dp"
+        android:hint="@string/address" />
+
+    <EditText
+        android:id="@+id/cityAddressText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="350dp"
+        android:hint="@string/cityAddress" />
+
+    <EditText
+        android:id="@+id/zipCodeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="400dp"
+        android:hint="@string/zipCode" />
+
+    <EditText
+        android:id="@+id/stateText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="450dp"
+        android:hint="@string/stateAbbr" />
+
+    />
 
 </RelativeLayout>

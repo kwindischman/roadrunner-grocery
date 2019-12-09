@@ -9,4 +9,10 @@
     <string name="produce">Produce</string>
     <string name="see_more">See More</string>
     <string name="checkout">Checkout</string>
+    <string name="FullName">Full Name</string>
+    <string name="phoneNUmber">Phone Number</string>
+    <string name="address">Home Adress</string>
+    <string name="cityAddress">City Name</string>
+    <string name="zipCode">Zip Code</string>
+    <string name="stateAbbr">State (e.g. TX)</string>
 </resources>
