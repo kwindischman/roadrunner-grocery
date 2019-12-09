@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">RoadrunnerGrocery</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="not_registered">Not registered?</string>
+    <string name="register">REGISTER</string>
+    <string name="already_registered">Already Registered?</string>
+    <string name="asGuest">Continue as Guest</string>
+    <string name="warning_register">Try another username or Register</string>
+    <string name="warn_user_exists">Error: Username taken.Try another.</string>
+    <string name="warn_login_incorrect">Email or password is incorrect</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="warn_pass_incorrect">Passwords do not match</string>
+
 </resources>
