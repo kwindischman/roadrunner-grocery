@@ -1,5 +1,6 @@
 package com.cs3773.roadrunnergrocery.Activities;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -46,31 +47,52 @@ public class CheckoutActivity extends AppCompatActivity {
 
             private void Check()
             {
-
                 if(TextUtils.isEmpty(nameEditText.getText().toString()))
                 {
-                    Toast.makeText(this, "Please enter full name.", Toast.LENGTH_SHORT).show();
+                    Context context = getApplicationContext();
+                    CharSequence text = "Please enter full name.";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+
                 }
 
                 else if(TextUtils.isEmpty(phoneEditText.getText().toString()))
                 {
-                    Toast.makeText(this, "Please enter a phone number.", Toast.LENGTH_SHORT).show();
-                }
+                    Context context = getApplicationContext();
+                    CharSequence text = "Please enter phone number.";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();                }
 
                 else if(TextUtils.isEmpty(cityEditText.getText().toString()))
                 {
-                    Toast.makeText(this, "Please enter a city.", Toast.LENGTH_SHORT).show();
-                }
+                    Context context = getApplicationContext();
+                    CharSequence text = "Please enter city.";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();                }
 
                 else if(TextUtils.isEmpty(zipcodeEditText.getText().toString()))
                 {
-                    Toast.makeText(this, "Please enter a zip code.", Toast.LENGTH_SHORT).show();
-                }
+                    Context context = getApplicationContext();
+                    CharSequence text = "Please enter zip code.";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();                }
 
                 else if (TextUtils.isEmpty(stateEditText.getText().toString()))
                 {
-                    Toast.makeText(this, "Please enter a state.", Toast.LENGTH_SHORT).show();
-                }
+                    Context context = getApplicationContext();
+                    CharSequence text = "Please enter state.";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();                }
 
                 else
                 {
@@ -90,7 +112,7 @@ public class CheckoutActivity extends AppCompatActivity {
                 SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
                 saveCurrentTime = currentDate.format(calForDate.getTime());
 
-                // TODO: save order to database if created
+                // TODO: save order to database if created and clear cart for next order
             }
         });
 

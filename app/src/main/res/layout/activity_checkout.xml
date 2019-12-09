@@ -39,9 +39,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="100dp"
         android:text="Shipping Details:"
         android:textSize="20dp"
+        android:textStyle="bold"
         />
 
     <EditText
@@ -50,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:hint="@string/FullName" />
         />
 
@@ -60,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="200dp"
         android:hint="@string/phoneNUmber" />
 
     <EditText
@@ -69,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="250dp"
         android:hint="@string/address" />
 
     <EditText
@@ -78,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="300dp"
         android:hint="@string/cityAddress" />
 
     <EditText
@@ -87,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="350dp"
         android:hint="@string/zipCode" />
 
     <EditText
@@ -96,9 +97,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="400dp"
         android:hint="@string/stateAbbr" />
 
-    />
+
 
 </RelativeLayout>
