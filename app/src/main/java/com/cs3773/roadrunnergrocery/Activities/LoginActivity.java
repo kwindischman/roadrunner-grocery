@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText usernameT, passwordT;
     private SharedPreferences sharedPreferences;
     public static final String PREFERENCE = "preference";
-    public static final String PREF_NAME = "name";
+    public static final String PREF_USER = "username";
     public static final String PREF_PASS = "password";
     public static final String PREF_SKIP_LOGIN = "skip_login";
 
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
             loginB.setOnClickListener(view -> {
 
                 if (validUserData()) {
-                    if (sharedPreferences.contains(PREF_NAME) &&
+                    if (sharedPreferences.contains(PREF_USER) &&
                             sharedPreferences.contains(PREF_PASS)) {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString(PREF_SKIP_LOGIN, "skip");
