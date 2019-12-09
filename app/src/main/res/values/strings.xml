@@ -20,5 +20,6 @@
     <string name="aptNum">Apt. No.</string>
     <string name="zipCode">Zip Code</string>
     <string name="cardNumber">Card Number</string>
+    <string name="update">UPDATE</string>
 
 </resources>

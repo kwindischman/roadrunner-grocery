@@ -23,10 +23,10 @@ public class RegisterActivity extends AppCompatActivity {
     private String username, password, emailAdd, cardNum, streetAdd;
     private String state, zipCode, aptNum, cityStr;
     public static final String PREFERENCE = "preference";
-    public static final String PREF_NAME = "name";
+    public static final String PREF_USER = "name";
     public static final String PREF_PASS = "password";
     public static final String PREF_EMAIL = "email";
-    public static final String PREF_PHONE = "phone";
+    public static final String PREF_CARD= "card";
     public static final String PREF_STREET = "street";
     public static final String PREF_APT = "aptNum";
     public static final String PREF_CITY = "city";
@@ -55,10 +55,10 @@ public class RegisterActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE,
                         Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(PREF_NAME,username);
+                editor.putString(PREF_USER,username);
                 editor.putString(PREF_PASS,password);
                 editor.putString(PREF_EMAIL,emailAdd);
-                editor.putString(PREF_PHONE,cardNum);
+                editor.putString(PREF_CARD,cardNum);
                 editor.putString(PREF_STREET,streetAdd);
                 editor.putString(PREF_STATE,state);
                 editor.putString(PREF_APT,aptNum);
@@ -80,7 +80,6 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
     }
-
     private boolean validUserData() {
         username = usernameT.getText().toString().trim();
         password = passwordT.getText().toString().trim();
