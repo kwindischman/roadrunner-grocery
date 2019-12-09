@@ -112,7 +112,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
                 else
                 {
-
+                    confirmOrder();
                 }
 
             }
@@ -129,6 +129,10 @@ public class CheckoutActivity extends AppCompatActivity {
                 saveCurrentTime = currentDate.format(calForDate.getTime());
 
                 // TODO: save order to database if created and clear cart for next order
+
+                // return user to home menu
+                Intent intent = new Intent(CheckoutActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
