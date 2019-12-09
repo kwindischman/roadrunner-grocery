@@ -119,7 +119,7 @@ public class BillingAddressActivity extends AppCompatActivity {
                 toast.show();
 
                 // return user to home menu
-                Intent intent = new Intent(BillingAddressActivity.this, MainActivity.class);
+                Intent intent = new Intent(BillingAddressActivity.this, ReceiptActivity.class);
                 startActivity(intent);
             }
 

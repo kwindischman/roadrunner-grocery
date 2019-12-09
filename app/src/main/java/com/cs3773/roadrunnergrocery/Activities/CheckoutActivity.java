@@ -2,7 +2,9 @@ package com.cs3773.roadrunnergrocery.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +21,9 @@ public class CheckoutActivity extends AppCompatActivity {
     // Variables here
     private EditText nameEditText, phoneEditText, addressEditText, cityEditText, zipcodeEditText, stateEditText;
     private Button confirmOrderButton;
+
+    // persist data with shared preferences
+    public static final String PREFS = "userShippingInfo";
 
     // Lifecycle methods here
     @Override
@@ -38,6 +43,10 @@ public class CheckoutActivity extends AppCompatActivity {
         cityEditText = (EditText) findViewById(R.id.cityAddressText);
         zipcodeEditText = (EditText) findViewById(R.id.zipCodeText);
         stateEditText = (EditText) findViewById(R.id.stateText);
+
+        // set up shared pref object
+        SharedPreferences userShippingInfo = getSharedPreferences(PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = userShippingInfo.edit();
 
         //Other methods here
         confirmOrderButton.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +122,16 @@ public class CheckoutActivity extends AppCompatActivity {
             }
 
             private void confirmOrder() {
+                // TODO: save order to database if created and clear cart for next order
+                saveData();
+
+                // Send user to process billing details
+                Intent intent = new Intent(CheckoutActivity.this, CheckoutBillingCardInfoActivity.class);
+                startActivity(intent);
+            }
+
+            public void saveData()
+            {
                 /*
                 final String saveCurrentDate, saveCurrentTime;
                 Calendar calForDate = Calendar.getInstance();
@@ -124,15 +143,15 @@ public class CheckoutActivity extends AppCompatActivity {
                 saveCurrentTime = currentDate.format(calForDate.getTime());
                 */
 
-                // TODO: save order to database if created and clear cart for next order
                 // use nameEditText.getText(), etc to extract input data and store in database file;
-
-                // return user to home menu
-                Intent intent = new Intent(CheckoutActivity.this, CheckoutBillingCardInfoActivity.class);
-                startActivity(intent);
+                editor.putString("userFullName", nameEditText.getText().toString());
+                editor.commit();
             }
+
         });
 
 
     }
+
+
 }

@@ -124,15 +124,16 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
 
                 // TODO: save order to database if created and clear cart for next order
 
-                // Give user confirmation on order
+                /* Give user confirmation on order
                 Context context = getApplicationContext();
                 CharSequence text = "Order Confirmed";
                 int duration = Toast.LENGTH_LONG;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+                */
 
                 // return user to home menu
-                Intent intent = new Intent(CheckoutBillingCardInfoActivity.this, MainActivity.class);
+                Intent intent = new Intent(CheckoutBillingCardInfoActivity.this, ReceiptActivity.class);
                 startActivity(intent);
             }
         });

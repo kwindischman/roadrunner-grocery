@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activities.BillingAddressActivity"></activity>
+        <activity android:name=".Activities.ReceiptActivity"></activity>
+        <activity android:name=".Activities.BillingAddressActivity" />
         <activity android:name=".Activities.CheckoutBillingCardInfoActivity" />
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
