@@ -9,16 +9,15 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 public class CheckoutBillingActivity extends AppCompatActivity {
 
     private EditText cardName, cardNumber, expDate, cvv;
     private Button confirmBillingOrderButton;
+    CheckBox checkBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +29,7 @@ public class CheckoutBillingActivity extends AppCompatActivity {
         cardNumber = (EditText) findViewById(R.id.cardNumberText);
         expDate = (EditText) findViewById(R.id.expDateText);
         cvv = (EditText) findViewById(R.id.cvvText);
+        checkBox = (CheckBox) findViewById(R.id.shippingAsBillingCheckbox) ;
 
         confirmBillingOrderButton.setOnClickListener(new View.OnClickListener()
         {
@@ -43,7 +43,7 @@ public class CheckoutBillingActivity extends AppCompatActivity {
                 if(TextUtils.isEmpty(cardName.getText().toString()))
                 {
                     Context context = getApplicationContext();
-                    CharSequence text = "Please enter name on shown on credit card.";
+                    CharSequence text = "Please enter name on card.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -86,8 +86,23 @@ public class CheckoutBillingActivity extends AppCompatActivity {
 
                 else
                 {
-                    confirmFinalOrder();
+                    // check if to reuse shipping address as billing address
+                    if(checkBox.isChecked())
+                    {
+                        confirmFinalOrder();
+                    }
+                    else
+                    {
+                        billingAddress();
+                    }
+
                 }
+            }
+
+            private void billingAddress()
+            {
+                Intent intent = new Intent(CheckoutBillingActivity.this, BillingAddressActivity.class);
+                startActivity(intent);
             }
 
             private void confirmFinalOrder()
