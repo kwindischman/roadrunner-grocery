@@ -18,9 +18,11 @@ import androidx.recyclerview.widget.RecyclerView;
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
 
     private List<Product> mProductList;
+    private Context mContext;
 
-    public SearchAdapter(List<Product> productList) {
+    public SearchAdapter(List<Product> productList, Context context) {
         mProductList = productList;
+        mContext = context;
     }
 
     @NonNull
@@ -36,13 +38,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     public void onBindViewHolder(@NonNull SearchAdapter.ViewHolder holder, int position) {
         Product product = mProductList.get(position);
 
-        // TODO: Set up the viewHolders with product information once we have products
         ImageView image = holder.image;
-        // set image here
+        int imageResource = mContext.getResources().getIdentifier(product.getImageURL(), null, mContext.getPackageName());
+        image.setImageDrawable(mContext.getResources().getDrawable(imageResource));
+
         TextView name = holder.name;
-        // set name here
+        name.setText(product.getName());
+
         TextView price = holder.price;
-        // set price here
+        price.setText(String.format("$%.2f", product.getPrice()));
     }
 
     @Override
