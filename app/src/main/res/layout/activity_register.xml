@@ -52,6 +52,7 @@
             android:id="@+id/not_registeredRText"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
+            android:layout_marginRight="10dp"
             android:text="@string/already_registered"
             android:textColor="#0c2430" />
         <TextView
@@ -62,6 +63,18 @@
             android:text="@string/login"
             android:textColor="#f15a22"
             android:textStyle="bold" />
+
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/asGuestText"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/asGuest"
+        android:textColor="#f15a22"
+        android:textStyle="bold" />
 
 </LinearLayout>

@@ -40,7 +40,6 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-
         android:background="#f15a22"
         android:text="@string/login"
         android:textColor="#ffffff" />
@@ -62,6 +61,8 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginLeft="10dp"
             android:text="@string/register"
             android:textColor="#f15a22"
             android:textStyle="bold" />
@@ -73,6 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
         android:text="@string/asGuest"
         android:textColor="#f15a22"
         android:textStyle="bold" />
