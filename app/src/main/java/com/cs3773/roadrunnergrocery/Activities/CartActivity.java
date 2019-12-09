@@ -56,4 +56,8 @@ public class CartActivity extends AppCompatActivity {
         recyclerView.setAdapter(cartAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
+
+    private void setupTotalPrice() {
+        //TODO: have this method take the prices from all items and add them up
+    }
 }
