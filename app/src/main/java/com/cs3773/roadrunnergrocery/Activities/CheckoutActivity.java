@@ -12,6 +12,9 @@ import com.cs3773.roadrunnergrocery.R;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class CheckoutActivity extends AppCompatActivity {
 
     // Variables here
@@ -71,9 +74,23 @@ public class CheckoutActivity extends AppCompatActivity {
 
                 else
                 {
-                    confirmOrderButton();
+                    confirmOrder();
                 }
 
+            }
+
+            private void confirmOrder()
+            {
+                final String saveCurrentDate, saveCurrentTime;
+                Calendar calForDate = Calendar.getInstance();
+
+                SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
+                saveCurrentDate = currentDate.format(calForDate.getTime());
+
+                SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
+                saveCurrentTime = currentDate.format(calForDate.getTime());
+
+                // TODO: save order to database if created
             }
         });
 
