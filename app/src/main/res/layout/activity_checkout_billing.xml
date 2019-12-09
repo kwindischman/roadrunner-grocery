@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="360dp"
         android:text="Use Shipping Address as the Billing Address:"
         android:textSize="20dp"
         android:textStyle="bold" />

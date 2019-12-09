@@ -21,7 +21,11 @@ public class BillingAddressActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_billing_address);
+        setUpButtonClick();
+    }
 
+    private void setUpButtonClick()
+    {
         confirmCheckoutButton = (Button) findViewById(R.id.confirm_order_button_billingAddressPage);
         billingName = (EditText) findViewById(R.id.billingNameText);
         billingPhoneNumber = (EditText) findViewById(R.id.billingPhoneNumberText);

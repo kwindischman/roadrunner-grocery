@@ -23,7 +23,11 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_billing);
+        setupOnClickButton();
+    }
 
+    private void setupOnClickButton()
+    {
         confirmBillingOrderButton = (Button) findViewById(R.id.finalConfirm_order_button);
         cardName = (EditText) findViewById(R.id.cardNameText);
         cardNumber = (EditText) findViewById(R.id.cardNumberText);
@@ -132,9 +136,5 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
     }
 }

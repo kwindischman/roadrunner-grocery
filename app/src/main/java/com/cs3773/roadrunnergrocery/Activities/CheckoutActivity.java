@@ -25,7 +25,10 @@ public class CheckoutActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+        setUpButtonClick();
+    }
 
+    private void setUpButtonClick() {
         // TODO: show total if necessary
 
         confirmOrderButton = (Button) findViewById(R.id.confirm_order_button);
@@ -37,18 +40,14 @@ public class CheckoutActivity extends AppCompatActivity {
         stateEditText = (EditText) findViewById(R.id.stateText);
 
         //Other methods here
-        confirmOrderButton.setOnClickListener(new View.OnClickListener()
-        {
+        confirmOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Check();
             }
 
-            private void Check()
-            {
-                if(TextUtils.isEmpty(nameEditText.getText().toString()))
-                {
+            private void Check() {
+                if (TextUtils.isEmpty(nameEditText.getText().toString())) {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter full name.";
                     int duration = Toast.LENGTH_SHORT;
@@ -56,67 +55,49 @@ public class CheckoutActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
 
-                }
-
-                else if(TextUtils.isEmpty(phoneEditText.getText().toString()))
-                {
+                } else if (TextUtils.isEmpty(phoneEditText.getText().toString())) {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter phone number.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                }
-
-                else if(TextUtils.isEmpty(addressEditText.getText().toString()))
-                {
+                } else if (TextUtils.isEmpty(addressEditText.getText().toString())) {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter home address.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                }
-
-                else if(TextUtils.isEmpty(cityEditText.getText().toString()))
-                {
+                } else if (TextUtils.isEmpty(cityEditText.getText().toString())) {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter city.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                }
-
-                else if(TextUtils.isEmpty(zipcodeEditText.getText().toString()))
-                {
+                } else if (TextUtils.isEmpty(zipcodeEditText.getText().toString())) {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter zip code.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                }
-
-                else if (TextUtils.isEmpty(stateEditText.getText().toString()))
-                {
+                } else if (TextUtils.isEmpty(stateEditText.getText().toString())) {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter state.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                }
-
-                else
-                {
+                } else {
                     confirmOrder();
                 }
 
+
             }
 
-            private void confirmOrder()
-            {
+            private void confirmOrder() {
                 /*
                 final String saveCurrentDate, saveCurrentTime;
                 Calendar calForDate = Calendar.getInstance();
@@ -137,9 +118,5 @@ public class CheckoutActivity extends AppCompatActivity {
         });
 
 
-
     }
-
-
-
 }
