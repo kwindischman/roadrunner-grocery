@@ -2,7 +2,6 @@ package com.cs3773.roadrunnergrocery.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.cs3773.roadrunnergrocery.R;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,10 +46,8 @@ public class BillingAddressActivity extends AppCompatActivity {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter full name.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-
                 }
 
                 else if(TextUtils.isEmpty(billingPhoneNumber.getText().toString()))
@@ -58,7 +55,6 @@ public class BillingAddressActivity extends AppCompatActivity {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter phone number.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -68,7 +64,6 @@ public class BillingAddressActivity extends AppCompatActivity {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter home address.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -78,7 +73,6 @@ public class BillingAddressActivity extends AppCompatActivity {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter city.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -88,7 +82,6 @@ public class BillingAddressActivity extends AppCompatActivity {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter zip code.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -98,27 +91,21 @@ public class BillingAddressActivity extends AppCompatActivity {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter state.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
 
                 else
                 {
-                    confirmOrderWithBillingAdderess();
+                    confirmOrderWithBillingAddress();
                 }
             }
 
-            private void confirmOrderWithBillingAdderess()
+            private void confirmOrderWithBillingAddress()
             {
-                // Give user confirmation on order
-                Context context = getApplicationContext();
-                CharSequence text = "Order Confirmed";
-                int duration = Toast.LENGTH_LONG;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                // TODO: save order to database if created and clear cart for next order
 
-                // return user to home menu
+                // send user to receipt activity
                 Intent intent = new Intent(BillingAddressActivity.this, ReceiptActivity.class);
                 startActivity(intent);
             }

@@ -2,7 +2,6 @@ package com.cs3773.roadrunnergrocery.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.cs3773.roadrunnergrocery.R;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -49,7 +48,6 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter name on card.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
 
@@ -60,7 +58,6 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter card number.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
 
@@ -71,7 +68,6 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter card expiration date.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
 
@@ -82,7 +78,6 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter card CVV number.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
 
@@ -111,26 +106,7 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
 
             private void confirmFinalOrder()
             {
-                /*
-                final String saveCurrentDate, saveCurrentTime;
-                Calendar calForDate = Calendar.getInstance();
-
-                SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
-                saveCurrentDate = currentDate.format(calForDate.getTime());
-
-                SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-                saveCurrentTime = currentDate.format(calForDate.getTime());
-                */
-
                 // TODO: save order to database if created and clear cart for next order
-
-                /* Give user confirmation on order
-                Context context = getApplicationContext();
-                CharSequence text = "Order Confirmed";
-                int duration = Toast.LENGTH_LONG;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-                */
 
                 // return user to home menu
                 Intent intent = new Intent(CheckoutBillingCardInfoActivity.this, ReceiptActivity.class);

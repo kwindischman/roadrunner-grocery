@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +22,7 @@ public class CheckoutActivity extends AppCompatActivity {
     private Button confirmOrderButton;
 
     // persist data with shared preferences
-    public static final String PREFS = "userShippingInfo";
+    public static final String PREFS_SHIPPING_INFO = "userShippingInfo";
 
     // Lifecycle methods here
     @Override
@@ -45,13 +44,14 @@ public class CheckoutActivity extends AppCompatActivity {
         stateEditText = (EditText) findViewById(R.id.stateText);
 
         // set up shared pref object
-        SharedPreferences userShippingInfo = getSharedPreferences(PREFS, MODE_PRIVATE);
+        SharedPreferences userShippingInfo = getSharedPreferences(PREFS_SHIPPING_INFO, MODE_PRIVATE);
         SharedPreferences.Editor editor = userShippingInfo.edit();
 
         //Other methods here
         confirmOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Check();
             }
 
@@ -122,7 +122,6 @@ public class CheckoutActivity extends AppCompatActivity {
             }
 
             private void confirmOrder() {
-                // TODO: save order to database if created and clear cart for next order
                 saveData();
 
                 // Send user to process billing details
@@ -132,19 +131,22 @@ public class CheckoutActivity extends AppCompatActivity {
 
             public void saveData()
             {
-                /*
-                final String saveCurrentDate, saveCurrentTime;
-                Calendar calForDate = Calendar.getInstance();
-
-                SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
-                saveCurrentDate = currentDate.format(calForDate.getTime());
-
-                SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-                saveCurrentTime = currentDate.format(calForDate.getTime());
-                */
-
-                // use nameEditText.getText(), etc to extract input data and store in database file;
                 editor.putString("userFullName", nameEditText.getText().toString());
+                editor.commit();
+
+                editor.putString("userPhoneNumber", phoneEditText.getText().toString());
+                editor.commit();
+
+                editor.putString("userHomeAddress", addressEditText.getText().toString());
+                editor.commit();
+
+                editor.putString("userCityAddress", cityEditText.getText().toString());
+                editor.commit();
+
+                editor.putString("userZipCode", zipcodeEditText.getText().toString());
+                editor.commit();
+
+                editor.putString("userState", stateEditText.getText().toString());
                 editor.commit();
             }
 
