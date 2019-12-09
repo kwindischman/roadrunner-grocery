@@ -1,6 +1,7 @@
 package com.cs3773.roadrunnergrocery.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -33,6 +34,7 @@ public class CheckoutActivity extends AppCompatActivity {
         confirmOrderButton = (Button) findViewById(R.id.confirm_order_button);
         nameEditText = (EditText) findViewById(R.id.nameText);
         phoneEditText = (EditText) findViewById(R.id.phoneNumberText);
+        addressEditText = (EditText) findViewById(R.id.addressText);
         cityEditText = (EditText) findViewById(R.id.nameText);
         zipcodeEditText = (EditText) findViewById(R.id.zipCodeText);
         stateEditText = (EditText) findViewById(R.id.stateText);
@@ -65,7 +67,18 @@ public class CheckoutActivity extends AppCompatActivity {
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();                }
+                    toast.show();
+                }
+
+                else if(TextUtils.isEmpty(addressEditText.getText().toString()))
+                {
+                    Context context = getApplicationContext();
+                    CharSequence text = "Please enter home address.";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
 
                 else if(TextUtils.isEmpty(cityEditText.getText().toString()))
                 {
@@ -74,7 +87,8 @@ public class CheckoutActivity extends AppCompatActivity {
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();                }
+                    toast.show();
+                }
 
                 else if(TextUtils.isEmpty(zipcodeEditText.getText().toString()))
                 {
@@ -83,7 +97,8 @@ public class CheckoutActivity extends AppCompatActivity {
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();                }
+                    toast.show();
+                }
 
                 else if (TextUtils.isEmpty(stateEditText.getText().toString()))
                 {
@@ -92,11 +107,12 @@ public class CheckoutActivity extends AppCompatActivity {
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();                }
+                    toast.show();
+                }
 
                 else
                 {
-                    confirmOrder();
+
                 }
 
             }
