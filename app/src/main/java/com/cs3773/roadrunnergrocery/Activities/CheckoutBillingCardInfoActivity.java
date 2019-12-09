@@ -86,10 +86,9 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
 
                 else
                 {
-                    // check if to reuse shipping address as billing address
+                    //check if to reuse shipping address as billing address
                     if(checkBox.isChecked())
                     {
-                        //TODO: confirmBillingOrderButton.setText("Confirm");
                         confirmFinalOrder();
                     }
                     else
