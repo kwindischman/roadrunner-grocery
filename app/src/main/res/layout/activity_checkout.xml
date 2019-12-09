@@ -42,8 +42,7 @@
         android:layout_marginTop="100dp"
         android:text="Shipping Details:"
         android:textSize="20dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/nameText"
@@ -53,7 +52,6 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="150dp"
         android:hint="@string/FullName" />
-        />
 
     <EditText
         android:id="@+id/phoneNumberText"
@@ -99,7 +97,5 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="400dp"
         android:hint="@string/stateAbbr" />
-
-
 
 </RelativeLayout>
