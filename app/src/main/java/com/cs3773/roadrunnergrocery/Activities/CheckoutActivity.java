@@ -35,7 +35,7 @@ public class CheckoutActivity extends AppCompatActivity {
         nameEditText = (EditText) findViewById(R.id.nameText);
         phoneEditText = (EditText) findViewById(R.id.phoneNumberText);
         addressEditText = (EditText) findViewById(R.id.addressText);
-        cityEditText = (EditText) findViewById(R.id.nameText);
+        cityEditText = (EditText) findViewById(R.id.cityAddressText);
         zipcodeEditText = (EditText) findViewById(R.id.zipCodeText);
         stateEditText = (EditText) findViewById(R.id.stateText);
 
@@ -46,8 +46,10 @@ public class CheckoutActivity extends AppCompatActivity {
                 Check();
             }
 
-            private void Check() {
-                if (TextUtils.isEmpty(nameEditText.getText().toString())) {
+            private void Check()
+            {
+                if (TextUtils.isEmpty(nameEditText.getText().toString()))
+                {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter full name.";
                     int duration = Toast.LENGTH_SHORT;
@@ -55,42 +57,55 @@ public class CheckoutActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
 
-                } else if (TextUtils.isEmpty(phoneEditText.getText().toString())) {
+                }
+
+                else if (TextUtils.isEmpty(phoneEditText.getText().toString()))
+                {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter phone number.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                } else if (TextUtils.isEmpty(addressEditText.getText().toString())) {
+                }
+
+                else if (TextUtils.isEmpty(addressEditText.getText().toString()))
+                {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter home address.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                } else if (TextUtils.isEmpty(cityEditText.getText().toString())) {
+                }
+
+                else if (TextUtils.isEmpty(cityEditText.getText().toString()))
+                {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter city.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                } else if (TextUtils.isEmpty(zipcodeEditText.getText().toString())) {
+                }
+
+                else if (TextUtils.isEmpty(zipcodeEditText.getText().toString()))
+                {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter zip code.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                } else if (TextUtils.isEmpty(stateEditText.getText().toString())) {
+                }
+
+                else if (TextUtils.isEmpty(stateEditText.getText().toString()))
+                {
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter state.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                } else {
+                }
+
+                else
+                {
                     confirmOrder();
                 }
 
@@ -110,6 +125,7 @@ public class CheckoutActivity extends AppCompatActivity {
                 */
 
                 // TODO: save order to database if created and clear cart for next order
+                // use nameEditText.getText(), etc to extract input data and store in database file;
 
                 // return user to home menu
                 Intent intent = new Intent(CheckoutActivity.this, CheckoutBillingCardInfoActivity.class);
