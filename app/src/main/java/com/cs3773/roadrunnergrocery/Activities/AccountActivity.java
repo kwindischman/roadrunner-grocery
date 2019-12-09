@@ -83,6 +83,7 @@ public class AccountActivity extends AppCompatActivity {
 
         //update data
         Button updateB = findViewById(R.id.updateButton);
+        Button homeB = findViewById(R.id.homeButton);
         updateB.setOnClickListener(view -> {
             if(validUserData()){
                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -97,27 +98,28 @@ public class AccountActivity extends AppCompatActivity {
                 editor.putString(PREF_ZIP,zipCode);
                 editor.apply();
                 finish();
-
             }
+        });
+
+        homeB.setOnClickListener(view ->{
+            Intent homeIntent = new Intent(this,MainActivity.class);
+            startActivity(homeIntent);
         });
     }
 
-    private boolean validUserData() {
-
-        username = usernameT.getText().toString().trim();
-        password = passwordT.getText().toString().trim();
-        emailAdd = emailT.getText().toString().trim();
-        cardNum = cardNumT.getText().toString().trim();
-        streetAdd = streetT.getText().toString().trim();
-        aptNum = aptNumT.getText().toString().trim();
-        state = stateT.getText().toString().trim();
-        zipCode = zipCodeT.getText().toString().trim();
-        cityStr =cityT.getText().toString().trim();
-        return !(username.isEmpty() || password.isEmpty());
-    }
-
-
-    //Other methods here
+      //Other methods here
+      private boolean validUserData() {
+          username = usernameT.getText().toString().trim();
+          password = passwordT.getText().toString().trim();
+          emailAdd = emailT.getText().toString().trim();
+          cardNum = cardNumT.getText().toString().trim();
+          streetAdd = streetT.getText().toString().trim();
+          aptNum = aptNumT.getText().toString().trim();
+          state = stateT.getText().toString().trim();
+          zipCode = zipCodeT.getText().toString().trim();
+          cityStr =cityT.getText().toString().trim();
+          return !(username.isEmpty() || password.isEmpty());
+      }
 
 
 }
