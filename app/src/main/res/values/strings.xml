@@ -16,7 +16,7 @@
     <string name="zipCode">Zip Code</string>
     <string name="stateAbbr">State (e.g. TX)</string>
     <string name="cardName">Card name</string>
-    <string name="cardNumber">Card number</string>
+    <string name="cardNumber">Card Number</string>
     <string name="expDate">Card Expiration Date (e.g. MM/YYYY)</string>
     <string name="cvv">CVV</string>
 </resources>
