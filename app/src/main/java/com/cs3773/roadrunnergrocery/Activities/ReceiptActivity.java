@@ -14,11 +14,18 @@ import android.widget.Toast;
 
 public class ReceiptActivity extends AppCompatActivity {
 
-    private TextView fullNameTextView, phoneNumberTextView, homeAddressTextView, cityNameTextView, zipCodeTextView, stateTextView;
+    private TextView fullNameTextView, phoneNumberTextView, homeAddressTextView
+                    , cityNameTextView, zipCodeTextView, stateTextView
+                    , cardName, cardNumber, expDate
+                    , cvv
+                    , billingFullNameTextView, billingPhoneNumberTextView, billingHomeAddressTextView
+                    , billingCityNameTextView, billingZipCodeTextView, billingStateTextView;
+
     private Button confirmFinalOrderButton;
 
     // sharedPref objects references
     public static final String PREFS_SHIPPING_INFO = "userShippingInfo";
+    public static final String PREFS_CHECKBOX_BOOL = "checkBoxBool";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +68,7 @@ public class ReceiptActivity extends AppCompatActivity {
 
     public void setUserInfoViews()
     {
+        // shipping info
         fullNameTextView = (TextView) findViewById(R.id.receiptFullName);
         phoneNumberTextView = (TextView) findViewById(R.id.receiptPhoneNumberText);
         homeAddressTextView = (TextView) findViewById(R.id.receiptAddressText);
@@ -68,20 +76,60 @@ public class ReceiptActivity extends AppCompatActivity {
         zipCodeTextView = (TextView) findViewById(R.id.receiptZipCodeText);
         stateTextView = (TextView) findViewById(R.id.receiptStateText);
 
-        // use this to extract full name from shared prefs
-        SharedPreferences userInfo = getSharedPreferences(PREFS_SHIPPING_INFO, MODE_PRIVATE);
-        String userFullName = userInfo.getString("userFullName","");
-        String userPhoneNumber = userInfo.getString("userPhoneNumber","");
-        String userHomeAddress = userInfo.getString("userHomeAddress","");
-        String userCityAddress = userInfo.getString("userCityAddress","");
-        String userZipCode = userInfo.getString("userZipCode","");
-        String userState = userInfo.getString("userState","");
+        // billing info
+        billingFullNameTextView = (TextView) findViewById(R.id.billingReceiptFullName);
+        billingPhoneNumberTextView = (TextView) findViewById(R.id.billingReceiptPhoneNumberText);
+        billingHomeAddressTextView = (TextView) findViewById(R.id.billingReceiptAddressText);
+        billingCityNameTextView = (TextView) findViewById(R.id.billingReceiptCityAddressText);
+        billingZipCodeTextView = (TextView) findViewById(R.id.billingReceiptZipCodeText);
+        billingStateTextView = (TextView) findViewById(R.id.billingReceiptStateText);
 
-        fullNameTextView.setText(userFullName);
-        phoneNumberTextView.setText(userPhoneNumber);
-        homeAddressTextView.setText(userHomeAddress);
-        cityNameTextView.setText(userCityAddress);
-        zipCodeTextView.setText(userZipCode);
-        stateTextView.setText(userState);
+        // get checkbox checkbox bool value
+        SharedPreferences checkBoxBool = getSharedPreferences(PREFS_CHECKBOX_BOOL, MODE_PRIVATE);
+        boolean checkBoxFlag = checkBoxBool.getBoolean("checkBoxBool",false);
+
+        if (checkBoxFlag){
+            SharedPreferences userInfo = getSharedPreferences(PREFS_SHIPPING_INFO, MODE_PRIVATE);
+            String userFullName = userInfo.getString("userFullName","");
+            String userPhoneNumber = userInfo.getString("userPhoneNumber","");
+            String userHomeAddress = userInfo.getString("userHomeAddress","");
+            String userCityAddress = userInfo.getString("userCityAddress","");
+            String userZipCode = userInfo.getString("userZipCode","");
+            String userState = userInfo.getString("userState","");
+
+            fullNameTextView.setText(userFullName);
+            phoneNumberTextView.setText(userPhoneNumber);
+            homeAddressTextView.setText(userHomeAddress);
+            cityNameTextView.setText(userCityAddress);
+            zipCodeTextView.setText(userZipCode);
+            stateTextView.setText(userState);
+
+            billingFullNameTextView.setText(userFullName);
+            billingPhoneNumberTextView.setText(userPhoneNumber);
+            billingHomeAddressTextView.setText(userHomeAddress);
+            billingCityNameTextView.setText(userCityAddress);
+            billingZipCodeTextView.setText(userZipCode);
+            billingStateTextView.setText(userState);
+        }
+
+        else {
+            // use this to extract full name from shared prefs
+            SharedPreferences userInfo = getSharedPreferences(PREFS_SHIPPING_INFO, MODE_PRIVATE);
+            String userFullName = userInfo.getString("userFullName","");
+            String userPhoneNumber = userInfo.getString("userPhoneNumber","");
+            String userHomeAddress = userInfo.getString("userHomeAddress","");
+            String userCityAddress = userInfo.getString("userCityAddress","");
+            String userZipCode = userInfo.getString("userZipCode","");
+            String userState = userInfo.getString("userState","");
+
+            fullNameTextView.setText(userFullName);
+            phoneNumberTextView.setText(userPhoneNumber);
+            homeAddressTextView.setText(userHomeAddress);
+            cityNameTextView.setText(userCityAddress);
+            zipCodeTextView.setText(userZipCode);
+            stateTextView.setText(userState);
+        }
+
+
     }
 }

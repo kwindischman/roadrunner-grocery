@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.cs3773.roadrunnergrocery.R;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -17,6 +18,10 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
     private EditText cardName, cardNumber, expDate, cvv;
     private Button confirmBillingOrderButton;
     private CheckBox checkBox;
+
+    // persist data with shared preferences
+    public static final String PREFS_CREDIT_CARD_INFO = "userCCInfo";
+    public static final String PREFS_CHECKBOX_BOOL = "checkBoxBool";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +37,20 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
         cardNumber = (EditText) findViewById(R.id.cardNumberText);
         expDate = (EditText) findViewById(R.id.expDateText);
         cvv = (EditText) findViewById(R.id.cvvText);
-        checkBox = (CheckBox) findViewById(R.id.shippingAsBillingCheckbox) ;
+        checkBox = (CheckBox) findViewById(R.id.shippingAsBillingCheckbox);
+
+        // set up shared pref object
+        SharedPreferences userCreditCardInfo = getSharedPreferences(PREFS_CREDIT_CARD_INFO, MODE_PRIVATE);
+        SharedPreferences.Editor editor = userCreditCardInfo.edit();
+
+        SharedPreferences checkBoxBool = getSharedPreferences(PREFS_CHECKBOX_BOOL, MODE_PRIVATE);
+        SharedPreferences.Editor checkBoxEditor = checkBoxBool.edit();
 
         confirmBillingOrderButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v){
+            public void onClick(View v)
+            {
                 CheckBilling();
             }
 
@@ -100,17 +113,39 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
 
             private void billingAddress()
             {
+                // set SharedPref checkbox bool false
+                saveCardData();
+                checkBoxEditor.putBoolean("checkBoxBool", false);
+                checkBoxEditor.commit();
                 Intent intent = new Intent(CheckoutBillingCardInfoActivity.this, BillingAddressActivity.class);
                 startActivity(intent);
             }
 
             private void confirmFinalOrder()
             {
-                // TODO: save order to database if created and clear cart for next order
-
+                // set SharedPref checkbox bool true
+                saveCardData();
+                checkBoxEditor.putBoolean("checkBoxBool", true);
+                checkBoxEditor.commit();
                 // return user to home menu
                 Intent intent = new Intent(CheckoutBillingCardInfoActivity.this, ReceiptActivity.class);
                 startActivity(intent);
+            }
+
+
+            private void saveCardData()
+            {
+                editor.putString("cardName", cardName.getText().toString());
+                editor.commit();
+
+                editor.putString("cardNumber", cardNumber.getText().toString());
+                editor.commit();
+
+                editor.putString("expDate", expDate.getText().toString());
+                editor.commit();
+
+                editor.putString("cvv", cvv.getText().toString());
+                editor.commit();
             }
         });
     }
