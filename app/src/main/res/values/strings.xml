@@ -13,6 +13,7 @@
     <string name="warn_login_incorrect">Email or password is incorrect</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="warn_pass_incorrect">Passwords do not match</string>
+<<<<<<< HEAD
     <string name="email">Email</string>
     <string name="phoneNumber">Phone Number</string>
     <string name="streetAddress">Street Address</string>
@@ -23,6 +24,8 @@
     <string name="cardNumber">Card Number</string>
     <string name="update">UPDATE</string>
     <string name="home">Home</string>
+=======
+>>>>>>> parent of 9ce4655... Register v0.5.2
 
 =======
     <string name="products">Products</string>
