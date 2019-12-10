@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.cs3773.roadrunnergrocery.Models.Cart;
 import com.cs3773.roadrunnergrocery.Models.Product;
 import com.cs3773.roadrunnergrocery.R;
 
@@ -51,7 +53,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         TextView quantity = holder.quantity;
 
         ImageView remove = holder.remove;
-        remove.setOnClickListener( v -> {
+        remove.setOnClickListener(v -> {
             Integer newQuantity = Integer.valueOf(quantity.getText().toString());
             if (newQuantity > 0) {
                 newQuantity -= 1;
@@ -60,10 +62,21 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         });
 
         ImageView add = holder.add;
-        add.setOnClickListener( v -> {
+        add.setOnClickListener(v -> {
             Integer newQuantity = Integer.valueOf(quantity.getText().toString());
             newQuantity += 1;
             quantity.setText(String.format("%d", newQuantity));
+        });
+
+        TextView addToCart = holder.addToCart;
+        addToCart.setOnClickListener(v -> {
+            Integer newQuantity = Integer.valueOf(quantity.getText().toString());
+            if (newQuantity > 0) {
+                Cart cart = Cart.getInstance();
+                cart.addItem(product.getPid(), newQuantity);
+                quantity.setText(String.format("%d", 0));
+                Toast.makeText(mContext, "Added to cart", Toast.LENGTH_LONG).show();
+            }
         });
     }
 
@@ -80,6 +93,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         TextView quantity;
         TextView name;
         TextView price;
+        TextView addToCart;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -90,6 +104,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             quantity = itemView.findViewById(R.id.quantity);
             remove = itemView.findViewById(R.id.remove_button);
             add = itemView.findViewById(R.id.add_button);
+            addToCart = itemView.findViewById(R.id.add_to_cart);
         }
     }
 }

@@ -15,6 +15,13 @@ public class ProductPair {
         quantity = 0;
     }
 
+    public ProductPair(int pid, int quantity) {
+        ProductBase productBase = new ProductBase();
+
+        this.product = productBase.getProduct(pid);
+        this.quantity = quantity;
+    }
+
     // Methods here
     public int getQuantity() {
         return quantity;
