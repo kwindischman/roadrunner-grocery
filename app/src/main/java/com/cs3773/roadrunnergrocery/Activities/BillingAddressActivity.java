@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.cs3773.roadrunnergrocery.R;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,6 +16,9 @@ public class BillingAddressActivity extends AppCompatActivity {
 
     private EditText billingName, billingPhoneNumber, billingAddress, billingCity, billingZipCode, billingState;
     private Button confirmCheckoutButton;
+
+    // persist data with shared preferences
+    public static final String PREFS_BILLING_INFO = "userBillingInfo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,10 @@ public class BillingAddressActivity extends AppCompatActivity {
         billingCity = (EditText) findViewById(R.id.billingCityAddressText);
         billingState = (EditText) findViewById(R.id.billingStateText);
         billingZipCode = (EditText) findViewById(R.id.billingZipCodeText);
+
+        // set up shared pref object
+        SharedPreferences userBillingInfo = getSharedPreferences(PREFS_BILLING_INFO, MODE_PRIVATE);
+        SharedPreferences.Editor billingEditor = userBillingInfo.edit();
 
         confirmCheckoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,11 +111,32 @@ public class BillingAddressActivity extends AppCompatActivity {
 
             private void confirmOrderWithBillingAddress()
             {
-                // TODO: save order to database if created and clear cart for next order
+                saveBillingInfoData();
 
                 // send user to receipt activity
                 Intent intent = new Intent(BillingAddressActivity.this, ReceiptActivity.class);
                 startActivity(intent);
+            }
+
+            private void saveBillingInfoData()
+            {
+                billingEditor.putString("billingUserFullName", billingName.getText().toString());
+                billingEditor.commit();
+
+                billingEditor.putString("billingPhoneNumber", billingPhoneNumber.getText().toString());
+                billingEditor.commit();
+
+                billingEditor.putString("billingAddress", billingAddress.getText().toString());
+                billingEditor.commit();
+
+                billingEditor.putString("billingCity", billingCity.getText().toString());
+                billingEditor.commit();
+
+                billingEditor.putString("billingState", billingState.getText().toString());
+                billingEditor.commit();
+
+                billingEditor.putString("billingZipCode", billingZipCode.getText().toString());
+                billingEditor.commit();
             }
 
         });

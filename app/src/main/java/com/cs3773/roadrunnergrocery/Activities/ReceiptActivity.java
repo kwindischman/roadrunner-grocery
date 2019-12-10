@@ -26,6 +26,11 @@ public class ReceiptActivity extends AppCompatActivity {
     // sharedPref objects references
     public static final String PREFS_SHIPPING_INFO = "userShippingInfo";
     public static final String PREFS_CHECKBOX_BOOL = "checkBoxBool";
+    public static final String PREFS_BILLING_INFO = "userBillingInfo";
+
+    //TODO: Do we need to show card info.?
+    public static final String PREFS_CREDIT_CARD_INFO = "userCCInfo";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +94,7 @@ public class ReceiptActivity extends AppCompatActivity {
         boolean checkBoxFlag = checkBoxBool.getBoolean("checkBoxBool",false);
 
         if (checkBoxFlag){
+            // put shipping info from shipping info activity in receipt
             SharedPreferences userInfo = getSharedPreferences(PREFS_SHIPPING_INFO, MODE_PRIVATE);
             String userFullName = userInfo.getString("userFullName","");
             String userPhoneNumber = userInfo.getString("userPhoneNumber","");
@@ -104,6 +110,7 @@ public class ReceiptActivity extends AppCompatActivity {
             zipCodeTextView.setText(userZipCode);
             stateTextView.setText(userState);
 
+            // billing sae as shipping details
             billingFullNameTextView.setText(userFullName);
             billingPhoneNumberTextView.setText(userPhoneNumber);
             billingHomeAddressTextView.setText(userHomeAddress);
@@ -113,7 +120,7 @@ public class ReceiptActivity extends AppCompatActivity {
         }
 
         else {
-            // use this to extract full name from shared prefs
+            // put shipping info from shipping info activity in receipt
             SharedPreferences userInfo = getSharedPreferences(PREFS_SHIPPING_INFO, MODE_PRIVATE);
             String userFullName = userInfo.getString("userFullName","");
             String userPhoneNumber = userInfo.getString("userPhoneNumber","");
@@ -128,6 +135,22 @@ public class ReceiptActivity extends AppCompatActivity {
             cityNameTextView.setText(userCityAddress);
             zipCodeTextView.setText(userZipCode);
             stateTextView.setText(userState);
+
+            // put billing info from billing info activity in receipt
+            SharedPreferences userBillingInfo = getSharedPreferences(PREFS_BILLING_INFO, MODE_PRIVATE);
+            String userBillingFullName = userBillingInfo.getString("billingUserFullName","");
+            String userBillingPhoneNumber = userBillingInfo.getString("billingPhoneNumber","");
+            String userBillingHomeAddress = userBillingInfo.getString("billingAddress","");
+            String userBillingCityAddress = userBillingInfo.getString("billingCity","");
+            String userBillingState = userBillingInfo.getString("billingState","");
+            String userBillingZipCode = userBillingInfo.getString("billingZipCode","");
+
+            billingFullNameTextView.setText(userBillingFullName);
+            billingPhoneNumberTextView.setText(userBillingPhoneNumber);
+            billingHomeAddressTextView.setText(userBillingHomeAddress);
+            billingCityNameTextView.setText(userBillingCityAddress);
+            billingZipCodeTextView.setText(userBillingZipCode);
+            billingStateTextView.setText(userBillingState);
         }
 
 
