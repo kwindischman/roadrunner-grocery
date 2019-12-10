@@ -58,4 +58,13 @@ public class ProductBase {
     public List<Product> getProductBase() {
         return productBase;
     }
+
+    public Product getProduct(int pid) {
+        for (int i = 0; i < productBase.size(); i++) {
+            if (productBase.get(i).getPid() == pid) {
+                return productBase.get(i);
+            }
+        }
+        return productBase.get(0);
+    }
 }

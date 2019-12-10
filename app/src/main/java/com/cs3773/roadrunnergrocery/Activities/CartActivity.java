@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.cs3773.roadrunnergrocery.Adapters.CartAdapter;
+import com.cs3773.roadrunnergrocery.Models.ProductBase;
 import com.cs3773.roadrunnergrocery.Models.ProductPair;
 import com.cs3773.roadrunnergrocery.R;
 
@@ -20,6 +21,7 @@ public class CartActivity extends AppCompatActivity {
 
     // Variables here
     List<ProductPair> mProducts;
+    ProductBase mProductBase;
 
     // Lifecycle methods here
     @Override
@@ -27,6 +29,7 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
+        mProductBase = new ProductBase();
         setupRecyclerView();
         setupCheckoutButton();
 
@@ -52,7 +55,7 @@ public class CartActivity extends AppCompatActivity {
         //     customer wants
         mProducts = new ArrayList<>();
 
-        CartAdapter cartAdapter = new CartAdapter(mProducts);
+        CartAdapter cartAdapter = new CartAdapter(mProducts, this);
         recyclerView.setAdapter(cartAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
