@@ -9,7 +9,6 @@ import com.cs3773.roadrunnergrocery.Models.Product;
 import com.cs3773.roadrunnergrocery.Models.ProductBase;
 import com.cs3773.roadrunnergrocery.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.Nullable;

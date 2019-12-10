@@ -46,7 +46,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         name.setText(product.getName());
 
         TextView price = holder.price;
-        price.setText(String.format("$%.2f", product.getPrice()));
+        price.setText(String.format("Price: $%.2f", product.getPrice()));
     }
 
     @Override
