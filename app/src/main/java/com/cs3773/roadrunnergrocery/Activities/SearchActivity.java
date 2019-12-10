@@ -9,7 +9,6 @@ import com.cs3773.roadrunnergrocery.Models.Product;
 import com.cs3773.roadrunnergrocery.Models.ProductBase;
 import com.cs3773.roadrunnergrocery.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.Nullable;
@@ -45,7 +44,6 @@ public class SearchActivity extends AppCompatActivity {
     public void setupRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.search_recycler);
 
-        // TODO: Get list of Products related to the search term (name, tags, desc, etc)
         ProductBase productBase = new ProductBase();
         mProducts = productBase.getProductBase();
 

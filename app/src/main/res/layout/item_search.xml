@@ -11,8 +11,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:src="@drawable/placeholder_image"
         android:maxHeight="80dp"
+        android:src="@drawable/placeholder_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/image_guide"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +38,57 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Product Name" />
 
+    <ImageView
+        android:id="@+id/remove_button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_remove_circle_outline_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/quantity"
+        app:layout_constraintStart_toEndOf="@id/image_guide"
+        app:layout_constraintTop_toBottomOf="@id/product_name" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:text="0"
+        android:gravity="center"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/add_button"
+        app:layout_constraintStart_toEndOf="@id/remove_button"
+        app:layout_constraintTop_toBottomOf="@id/product_name" />
+
+    <ImageView
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_add_circle_outline_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/add_to_cart"
+        app:layout_constraintStart_toEndOf="@id/quantity"
+        app:layout_constraintTop_toBottomOf="@id/product_name" />
+
+    <TextView
+        android:id="@+id/add_to_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/add_to_cart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/price_guide"
+        app:layout_constraintStart_toEndOf="@id/add_button"
+        app:layout_constraintTop_toBottomOf="@id/product_name" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/price_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".8" />
+
     <TextView
         android:id="@+id/product_price"
         android:layout_width="0dp"
@@ -47,7 +98,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/image_guide"
+        app:layout_constraintStart_toEndOf="@id/price_guide"
         app:layout_constraintTop_toBottomOf="@id/product_name"
         tools:text="Price: $0.13" />
 </androidx.constraintlayout.widget.ConstraintLayout>
