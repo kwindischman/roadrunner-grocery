@@ -39,8 +39,7 @@ public class CartActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, CheckoutActivity.class);
                 startActivity(intent);
             } else {
-                Intent intent = new Intent(this, CheckoutActivity.class);
-                startActivity(intent);
+                Toast.makeText(this, "Your cart is empty!", Toast.LENGTH_SHORT).show();
             }
         });
     }
