@@ -26,7 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     public static final String PREFERENCE = "preference";
-    public static final String PREF_USER = "name";
+    public static final String PREF_USER = "username";
     public static final String PREF_PASS = "password";
 
     public static final String PREF_EMAIL = "email";
