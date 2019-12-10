@@ -6,7 +6,6 @@ import android.widget.SearchView;
 
 import com.cs3773.roadrunnergrocery.Adapters.SearchAdapter;
 import com.cs3773.roadrunnergrocery.Models.Product;
-import com.cs3773.roadrunnergrocery.Models.ProductBase;
 import com.cs3773.roadrunnergrocery.R;
 
 import java.util.List;
@@ -42,11 +41,11 @@ public class SearchActivity extends AppCompatActivity {
     public void setupRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.search_recycler);
 
-        ProductBase productBase = new ProductBase();
-        mProducts = productBase.getProductBase();
+        // TODO: Get list of Products related to the search term (name, tags, desc, etc)
+        mProducts = new ArrayList<>();
 
-        mSearchAdapter = new SearchAdapter(mProducts, this);
-        recyclerView.setAdapter(mSearchAdapter);
+        SearchAdapter searchAdapter = new SearchAdapter(mProducts);
+        recyclerView.setAdapter(searchAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 

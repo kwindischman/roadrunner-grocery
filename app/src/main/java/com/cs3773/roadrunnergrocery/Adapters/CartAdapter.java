@@ -18,11 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     private List<ProductPair> mProductPairList;
-    private Context mContext;
 
-    public CartAdapter(List<ProductPair> productList, Context context) {
+    public CartAdapter(List<ProductPair> productList) {
         mProductPairList = productList;
-        mContext = context;
     }
 
     @NonNull
@@ -36,24 +34,20 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CartAdapter.ViewHolder holder, int position) {
-        ProductPair productPair = mProductPairList.get(position);
+        ProductPair product = mProductPairList.get(position);
 
+        // TODO: Set up the viewHolders with product information once we have products
         ImageView image = holder.image;
-        int imageResource = mContext.getResources().getIdentifier(productPair.getProduct().getImageURL()
-                , null, mContext.getPackageName());
-        image.setImageDrawable(mContext.getResources().getDrawable(imageResource));
-
+        // set image here
         TextView name = holder.name;
-        name.setText(productPair.getProduct().getName());
-
+        // set name here
         TextView price = holder.price;
-        price.setText(String.format("Total: $%.2f", getTotalPrice(productPair)));
-
+        // set price here
         TextView quantity = holder.quantity;
-        quantity.setText(String.format("Quantity: %d", productPair.getQuantity()));
+        // set quantity here
 
         holder.removeIcon.setOnClickListener(v -> {
-            mProductPairList.remove(productPair);
+            mProductPairList.remove(product);
             notifyDataSetChanged();
         });
     }
@@ -61,10 +55,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return mProductPairList.size();
-    }
-
-    private double getTotalPrice(ProductPair productPair) {
-        return productPair.getProduct().getPrice() * productPair.getQuantity();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

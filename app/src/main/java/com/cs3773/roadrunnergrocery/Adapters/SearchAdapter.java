@@ -25,8 +25,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     private List<Product> mProductList;
     private List<Product> mProductListFull;
     private Context mContext;
-
-    public SearchAdapter(List<Product> productList, Context context) {
+    public SearchAdapter(List<Product> productList) {
         mProductList = productList;
         mProductListFull = new ArrayList<>(productList);
         mContext = context;
@@ -45,14 +44,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     public void onBindViewHolder(@NonNull SearchAdapter.ViewHolder holder, int position) {
         Product product = mProductList.get(position);
 
+        // TODO: Set up the viewHolders with product information once we have products
         ImageView image = holder.image;
-        int imageResource = mContext.getResources().getIdentifier(product.getImageURL(), null, mContext.getPackageName());
-        image.setImageDrawable(mContext.getResources().getDrawable(imageResource));
-
+        // set image here
         TextView name = holder.name;
-        name.setText(product.getName());
-
+        // set name here
         TextView price = holder.price;
+<<<<<<< HEAD
         price.setText(String.format("Price: $%.2f", product.getPrice()));
 
         TextView quantity = holder.quantity;
@@ -83,6 +81,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 Toast.makeText(mContext, "Added to cart", Toast.LENGTH_LONG).show();
             }
         });
+=======
+        // set price here
+>>>>>>> Pull from Master 2
     }
 
     @Override
