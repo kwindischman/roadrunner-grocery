@@ -27,59 +27,66 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        clickLogin();
+        clickRegister();
+        clickAsGuest();        }
+
+    private void clickAsGuest() {
+        TextView asGuestT = findViewById(R.id.asGuestText);
+        asGuestT.setOnClickListener(view -> {
+            Intent guestIntent = new Intent(this,MainActivity.class);
+            startActivity(guestIntent);
+        });
+    }
+
+    private void clickRegister() {
+        TextView registerT = findViewById(R.id.regText);
+        registerT.setOnClickListener(view -> {
+            Intent registerIntent = new Intent(this,RegisterActivity.class);
+            startActivity(registerIntent);
+
+        });
+    }
+
+    private void clickLogin() {
         sharedPreferences = getSharedPreferences(PREFERENCE, Context.MODE_PRIVATE);
 
         if(sharedPreferences.contains(PREF_SKIP_LOGIN)){
-            Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent mainIntent = new Intent(this, MainActivity.class);
             startActivity(mainIntent);
             finish();
-        }else{
+        }else {
 
             usernameT = findViewById(R.id.usernameText);
             passwordT = findViewById(R.id.passwordText);
             Button loginB = findViewById(R.id.loginButton);
-            TextView registerT = findViewById(R.id.regText);
-            TextView asGuestT = findViewById(R.id.asGuestText);
+
 
             loginB.setOnClickListener(view -> {
 
-<<<<<<< HEAD
                 if (validUserData()) {
                     if (sharedPreferences.contains(PREF_USER) &&
                             sharedPreferences.contains(PREF_PASS)) {
-=======
-                if(validUserData()){
-                    if(sharedPreferences.contains(PREF_NAME)&&
-                            sharedPreferences.contains(PREF_PASS)){
->>>>>>> parent of e00da48... Login and Register v0.5
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString(PREF_SKIP_LOGIN,"skip");
+                        editor.putString(PREF_SKIP_LOGIN, "skip");
                         editor.apply();
                         Intent mainIntent = new Intent(LoginActivity.this,
                                 MainActivity.class);
                         startActivity(mainIntent);
                         finish();
-                    }else{
+                    } else {
                         Toast.makeText(getApplicationContext(), "Unable to Login, Register",
                                 Toast.LENGTH_LONG).show();
                     }
                 }
             });
-            asGuestT.setOnClickListener(view -> {
-                Intent guestIntent = new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(guestIntent);
-            });
-
-            registerT.setOnClickListener(view -> {
-                Intent registerIntent = new Intent(LoginActivity.this,RegisterActivity.class);
-                startActivity(registerIntent);
-
-            });
         }
     }
+
     private boolean validUserData() {
         String username = usernameT.getText().toString().trim();
         String password = passwordT.getText().toString().trim();
         return !(username.isEmpty() || password.isEmpty());
     }
+
 }
