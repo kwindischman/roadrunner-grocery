@@ -44,7 +44,6 @@ public class SearchActivity extends AppCompatActivity {
     public void setupRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.search_recycler);
 
-        // TODO: Get list of Products related to the search term (name, tags, desc, etc)
         ProductBase productBase = new ProductBase();
         mProducts = productBase.getProductBase();
 
