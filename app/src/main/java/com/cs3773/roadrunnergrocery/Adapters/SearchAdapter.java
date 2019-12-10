@@ -47,6 +47,24 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
         TextView price = holder.price;
         price.setText(String.format("Price: $%.2f", product.getPrice()));
+
+        TextView quantity = holder.quantity;
+
+        ImageView remove = holder.remove;
+        remove.setOnClickListener( v -> {
+            Integer newQuantity = Integer.valueOf(quantity.getText().toString());
+            if (newQuantity > 0) {
+                newQuantity -= 1;
+                quantity.setText(String.format("%d", newQuantity));
+            }
+        });
+
+        ImageView add = holder.add;
+        add.setOnClickListener( v -> {
+            Integer newQuantity = Integer.valueOf(quantity.getText().toString());
+            newQuantity += 1;
+            quantity.setText(String.format("%d", newQuantity));
+        });
     }
 
     @Override
@@ -57,17 +75,21 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;
+        ImageView remove;
+        ImageView add;
+        TextView quantity;
         TextView name;
         TextView price;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            // TODO: setOnClickListener for itemView to open ProductActivity with the product id
-            //  as an intent extra
 
             image = itemView.findViewById(R.id.product_image);
             name = itemView.findViewById(R.id.product_name);
             price = itemView.findViewById(R.id.product_price);
+            quantity = itemView.findViewById(R.id.quantity);
+            remove = itemView.findViewById(R.id.remove_button);
+            add = itemView.findViewById(R.id.add_button);
         }
     }
 }
