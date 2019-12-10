@@ -17,7 +17,7 @@
             android:id="@+id/usernameRText"
             android:layout_width="190dp"
             android:layout_height="40dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginRight="55dp"
             android:layout_marginTop="60dp"
             android:background="#ffffff"
             android:hint="@string/username"
@@ -28,7 +28,7 @@
             android:layout_width="190dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginRight="55dp"
             android:background="#ffffff"
             android:hint="@string/password"
             android:inputType="textPassword" />
@@ -150,5 +150,14 @@
             android:textColor="#f15a22"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/asGuestText"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:paddingLeft="10dp"
+        android:text="@string/asGuest"
+        android:textColor="#f15a22"
+        android:textStyle="bold" />
 
 </LinearLayout>
