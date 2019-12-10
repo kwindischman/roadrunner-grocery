@@ -51,9 +51,6 @@ public class CartActivity extends AppCompatActivity {
     private void setupRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.cart_recycler);
 
-        // TODO: Get list of customers ProductPairs in their cart
-        // Just a reminder that a ProductPair is simply a product with a count of how many the
-        //     customer wants
         Cart cart = Cart.getInstance();
         mProducts = cart.getItems();
 

@@ -75,11 +75,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupSearch() {
-        // TODO: Implement some sort of search system
         SearchView searchView = findViewById(R.id.search);
 
-        // TODO: Change this from onClickListener to a listener that activates when user searches
-        //  for a term
+        // TODO: When user searches for a term, open SearchActivity with the text passed through
+        //  intent and put the text into the SearchView in that activity + narrow results to items
+        //  that contain the word in their name or tag(s)
         searchView.setOnClickListener(v -> {
             Intent intent = new Intent(this, SearchActivity.class);
             startActivity(intent);

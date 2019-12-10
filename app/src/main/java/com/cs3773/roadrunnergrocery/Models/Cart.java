@@ -5,13 +5,9 @@ import java.util.List;
 
 public class Cart {
 
-    // Class Variables here
     public static final Cart cart = new Cart();
     private List<ProductPair> cartItems = new ArrayList<>();
 
-    // Constructor(s) here
-
-    // Methods here
     public static Cart getInstance() {
         return cart;
     }
