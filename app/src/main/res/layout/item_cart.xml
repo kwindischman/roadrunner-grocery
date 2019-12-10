@@ -27,10 +27,10 @@
 
     <TextView
         android:id="@+id/cart_product_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/cart_total_price"
         app:layout_constraintStart_toEndOf="@id/image_guideline"
