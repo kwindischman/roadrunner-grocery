@@ -149,8 +149,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     <TextView
         android:id="@+id/asGuestText"
         android:layout_width="wrap_content"
@@ -161,8 +160,5 @@
         android:textColor="#f15a22"
         android:textStyle="bold" />
 
-=======
->>>>>>> parent of e00da48... Login and Register v0.5
-=======
->>>>>>> parent of e00da48... Login and Register v0.5
+
 </LinearLayout>

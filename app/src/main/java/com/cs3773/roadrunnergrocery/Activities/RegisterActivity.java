@@ -23,7 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String username, password, emailAdd, cardNum, streetAdd;
     private String state, zipCode, aptNum, cityStr;
     public static final String PREFERENCE = "preference";
-    public static final String PREF_USER = "name";
+    public static final String PREF_USER = "username";
     public static final String PREF_PASS = "password";
     public static final String PREF_EMAIL = "email";
     public static final String PREF_CARD= "card";

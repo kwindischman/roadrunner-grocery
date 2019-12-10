@@ -43,21 +43,12 @@ public class LoginActivity extends AppCompatActivity {
 
             loginB.setOnClickListener(view -> {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                if (validUserData()) {
-                    if (sharedPreferences.contains(PREF_USER) &&
-                            sharedPreferences.contains(PREF_PASS)) {
-=======
+
+
                 if(validUserData()){
-                    if(sharedPreferences.contains(PREF_NAME)&&
+                    if(sharedPreferences.contains(PREF_USER)&&
                             sharedPreferences.contains(PREF_PASS)){
->>>>>>> parent of e00da48... Login and Register v0.5
-=======
-                if(validUserData()){
-                    if(sharedPreferences.contains(PREF_NAME)&&
-                            sharedPreferences.contains(PREF_PASS)){
->>>>>>> parent of e00da48... Login and Register v0.5
+
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString(PREF_SKIP_LOGIN,"skip");
                         editor.apply();
