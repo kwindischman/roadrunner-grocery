@@ -6,7 +6,6 @@
     android:gravity="center_horizontal"
     >
 
-
     <LinearLayout
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
@@ -15,34 +14,33 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/usernameText"
+            android:id="@+id/usernameRText"
             android:layout_width="190dp"
             android:layout_height="40dp"
             android:layout_marginTop="150dp"
             android:background="#ffffff"
             android:hint="@string/username"
-            android:inputType="text"
-            android:importantForAutofill="no" />
+            android:inputType="text"/>
 
         <EditText
-            android:id="@+id/passwordText"
+            android:id="@+id/passwordRText"
             android:layout_width="190dp"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:background="#ffffff"
             android:hint="@string/password"
-            android:inputType="textPassword"
-            android:importantForAutofill="no" />
+            android:inputType="textPassword" />
+
     </LinearLayout>
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/registerRButton"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
 
         android:background="#f15a22"
-        android:text="@string/login"
+        android:text="@string/register"
         android:textColor="#ffffff" />
     <LinearLayout
         android:layout_width="wrap_content"
@@ -51,30 +49,19 @@
         android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/not_registeredText"
+            android:id="@+id/not_registeredRText"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="@string/not_registered"
-            android:textColor="#0c2340" />
-
+            android:text="@string/already_registered"
+            android:textColor="#0c2430" />
         <TextView
-            android:id="@+id/regText"
+            android:id="@+id/loginRText"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:paddingLeft="10dp"
-            android:text="@string/register"
+            android:text="@string/login"
             android:textColor="#f15a22"
             android:textStyle="bold" />
-
-
     </LinearLayout>
-    <TextView
-        android:id="@+id/asGuestText"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:paddingLeft="10dp"
-        android:text="@string/asGuest"
-        android:textColor="#f15a22"
-        android:textStyle="bold" />
 
 </LinearLayout>
