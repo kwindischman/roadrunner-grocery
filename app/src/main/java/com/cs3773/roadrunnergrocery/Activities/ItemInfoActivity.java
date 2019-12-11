@@ -2,6 +2,8 @@ package com.cs3773.roadrunnergrocery.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.cs3773.roadrunnergrocery.Models.Product;
 import com.cs3773.roadrunnergrocery.Models.ProductBase;
@@ -13,6 +15,10 @@ public class ItemInfoActivity extends AppCompatActivity {
 
     // Class variables here
     Product mProduct;
+    ImageView prodImage;
+    TextView prodName;
+    TextView prodDesc;
+    TextView prodPrice;
 
     // Lifecycle methods here
     @Override
@@ -21,6 +27,16 @@ public class ItemInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item_info);
 
         setupInstanceOfProduct();
+
+        prodImage = findViewById(R.id.prodImage);
+        prodName = findViewById(R.id.prodName);
+        prodDesc = findViewById(R.id.prodDesc);
+        prodPrice = findViewById(R.id.priceView);
+
+
+        prodName.setText(mProduct.getName());
+        prodDesc.setText(mProduct.getDescription());
+        prodPrice.setText(" Price: " + mProduct.getPrice());
     }
 
     // Other methods here

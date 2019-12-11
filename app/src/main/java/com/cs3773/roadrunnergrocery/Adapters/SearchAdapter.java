@@ -1,6 +1,7 @@
 package com.cs3773.roadrunnergrocery.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.cs3773.roadrunnergrocery.Activities.ItemInfoActivity;
 import com.cs3773.roadrunnergrocery.Models.Cart;
 import com.cs3773.roadrunnergrocery.Models.Product;
 import com.cs3773.roadrunnergrocery.R;
@@ -51,6 +53,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         int imageResource = mContext.getResources().getIdentifier(product.getImageURL(), null, mContext.getPackageName());
         Glide.with(mContext).load(mContext.getResources().getDrawable(imageResource))
                 .apply(RequestOptions.circleCropTransform()).into(image);
+        image.setOnClickListener(v -> {
+            Intent intent = new Intent( mContext, ItemInfoActivity.class);
+            intent.putExtra("PRODUCT_PID", product.getPid());
+            mContext.startActivity(intent);
+        });
 
         TextView name = holder.name;
         name.setText(product.getName());

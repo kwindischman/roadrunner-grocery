@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/prodImage"
+            android:layout_width="231dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:cropToPadding="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/avocado" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/prodName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="NAME OF PRODUCT" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="327dp">
+
+        <TextView
+            android:id="@+id/prodDesc"
+            android:layout_width="match_parent"
+            android:layout_height="325dp"
+            android:text="DESCRIPTION OF PRODUCT" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/priceView"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:text="PRICE" />
 </LinearLayout>
