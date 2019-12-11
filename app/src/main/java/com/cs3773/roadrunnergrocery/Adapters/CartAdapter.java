@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.cs3773.roadrunnergrocery.Models.ProductPair;
 import com.cs3773.roadrunnergrocery.R;
 
@@ -41,7 +43,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         ImageView image = holder.image;
         int imageResource = mContext.getResources().getIdentifier(productPair.getProduct().getImageURL()
                 , null, mContext.getPackageName());
-        image.setImageDrawable(mContext.getResources().getDrawable(imageResource));
+        Glide.with(mContext).load(mContext.getResources().getDrawable(imageResource))
+                .apply(RequestOptions.circleCropTransform()).into(image);
 
         TextView name = holder.name;
         name.setText(productPair.getProduct().getName());
