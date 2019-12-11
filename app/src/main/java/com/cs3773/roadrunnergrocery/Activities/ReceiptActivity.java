@@ -16,8 +16,8 @@ public class ReceiptActivity extends AppCompatActivity {
 
     private TextView fullNameTextView, phoneNumberTextView, homeAddressTextView
                     , cityNameTextView, zipCodeTextView, stateTextView
-                    , cardName, cardNumber, expDate
-                    , cvv
+                    , cardNameTextView, cardNumberTextView, expDateTextView
+                    , cvvTextView
                     , billingFullNameTextView, billingPhoneNumberTextView, billingHomeAddressTextView
                     , billingCityNameTextView, billingZipCodeTextView, billingStateTextView;
 
@@ -89,6 +89,20 @@ public class ReceiptActivity extends AppCompatActivity {
         billingZipCodeTextView = (TextView) findViewById(R.id.billingReceiptZipCodeText);
         billingStateTextView = (TextView) findViewById(R.id.billingReceiptStateText);
 
+        // card info
+        cardNameTextView = (TextView) findViewById(R.id.receiptCardName);
+        cardNumberTextView = (TextView) findViewById(R.id.receiptCardNumber);
+
+        // put user card info in receipt
+        SharedPreferences userCardInfo = getSharedPreferences(PREFS_CREDIT_CARD_INFO, MODE_PRIVATE);
+        String userCardName = userCardInfo.getString("cardName","");
+        String userCardNumber = userCardInfo.getString("cardNumber","");
+
+        String scCC = secureCardNumber(userCardNumber);
+
+        cardNameTextView.setText(userCardName);
+        cardNumberTextView.setText(scCC);
+
         // get checkbox checkbox bool value
         SharedPreferences checkBoxBool = getSharedPreferences(PREFS_CHECKBOX_BOOL, MODE_PRIVATE);
         boolean checkBoxFlag = checkBoxBool.getBoolean("checkBoxBool",false);
@@ -154,5 +168,23 @@ public class ReceiptActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    private String secureCardNumber(String s)
+    {
+        String res = "";
+        String convertedRes = "**** **** **** ";
+
+        if (s.length() > 4)
+        {
+            res = s.substring(s.length() - 4);
+        }
+        else
+        {
+            res = s;
+        }
+
+        convertedRes = convertedRes + res;
+        return convertedRes;
     }
 }

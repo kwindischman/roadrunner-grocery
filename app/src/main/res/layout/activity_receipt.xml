@@ -93,10 +93,26 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="40dp"
             android:text="Payment Details:"
             android:textSize="20dp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/receiptCardName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cardName"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="50dp" />
+
+        <TextView
+            android:id="@+id/receiptCardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cardNumber"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="50dp" />
 
         <TextView
             android:layout_width="match_parent"
