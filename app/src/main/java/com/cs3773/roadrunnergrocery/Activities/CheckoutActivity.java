@@ -2,7 +2,8 @@ package com.cs3773.roadrunnergrocery.Activities;
 
         import android.os.Bundle;
 
-        import com.cs3773.roadrunnergrocery.Adapters.CartAdapter;
+        import com.cs3773.roadrunnergrocery.Activities.CartActivity;
+        import com.cs3773.roadrunnergrocery.Models.Cart;
         import com.cs3773.roadrunnergrocery.R;
 
         import androidx.annotation.Nullable;
@@ -47,16 +48,12 @@ public class CheckoutActivity extends AppCompatActivity {
         return 0;
     }
 */
-    protected double localCheckout(CartAdapter customerOrder)
+    protected static double localCheckout(double cartTotal)
     {
-        float cartTotal = 0.00F;
-        for (int i = 0; i < customerOrder.getItemCount() ; i++)
-        {
-            customerOrder.mProductPairList.get(i);
-        }
+        double finalCart = cartTotal;
+
         float taxRate = 1.0F;
-        float discountPercent = 0F;
-        float discountMonetary = 0.0F;
+        float discountPercent,discountMonetary;
         double intermediateTotal = 0.00F; //debug value: -9999
         discountMonetary = PromotionActivity.couponMonetary();
         discountPercent = PromotionActivity.couponPercent();
@@ -251,9 +248,9 @@ public class CheckoutActivity extends AppCompatActivity {
         }
 
         //Final Cost
-        double finalTotal = intermediateTotal + (cartTotal * taxRate);
+         finalCart = intermediateTotal + (cartTotal * taxRate);
 
-        return finalTotal;
+        return finalCart;
     }
 
 }

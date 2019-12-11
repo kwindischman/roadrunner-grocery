@@ -11,12 +11,16 @@ import com.cs3773.roadrunnergrocery.Models.Cart;
 import com.cs3773.roadrunnergrocery.Models.ProductPair;
 import com.cs3773.roadrunnergrocery.R;
 
+import com.cs3773.roadrunnergrocery.Activities.CheckoutActivity;
+
 import java.util.List;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import static com.cs3773.roadrunnergrocery.Activities.CheckoutActivity.localCheckout;
 
 public class CartActivity extends AppCompatActivity {
 
@@ -62,6 +66,7 @@ public class CartActivity extends AppCompatActivity {
         for (ProductPair pp : cart.getItems()) {
             total += pp.getProduct().getPrice() * pp.getQuantity();
         }
+        total = localCheckout(total);
         TextView totalPrice = findViewById(R.id.total_price);
         totalPrice.setText(String.format("Cart Total: $%.2f", total));
     }
