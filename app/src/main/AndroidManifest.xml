@@ -11,9 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+<<<<<<< HEAD
+        <activity android:name=".Activities.RegisterActivity"></activity>
+=======
         <activity android:name=".Activities.ReceiptActivity"></activity>
         <activity android:name=".Activities.BillingAddressActivity" />
         <activity android:name=".Activities.CheckoutBillingCardInfoActivity" />
+>>>>>>> master
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,6 +66,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.SettingsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ActivitiesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
