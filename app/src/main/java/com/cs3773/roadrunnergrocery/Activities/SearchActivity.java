@@ -61,6 +61,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String s) {
                 mSearchAdapter.getFilter().filter(s);
+
                 return false;
             }
         });
@@ -68,7 +69,7 @@ public class SearchActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String extra = intent.getStringExtra("SEARCH_EXTRA");
         if (extra != null && extra.length() != 0) {
-            mSearchAdapter.getFilter().filter(extra);
+            searchView.setQuery(extra, false);
         }
     }
 }
