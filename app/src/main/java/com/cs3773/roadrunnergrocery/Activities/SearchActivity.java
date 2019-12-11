@@ -18,10 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class SearchActivity extends AppCompatActivity {
 
-    // Variables here
     List<Product> mProducts;
+    SearchAdapter mSearchAdapter;
 
-    // Lifecycle methods here
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +32,6 @@ public class SearchActivity extends AppCompatActivity {
         findViewById(R.id.back_arrow).setOnClickListener(v -> onBackPressed());
     }
 
-    //Other methods here
     public void setupCartIcon() {
         findViewById(R.id.cart_icon).setOnClickListener(v -> {
             Intent intent = new Intent(this, CartActivity.class);
@@ -47,22 +45,30 @@ public class SearchActivity extends AppCompatActivity {
         ProductBase productBase = new ProductBase();
         mProducts = productBase.getProductBase();
 
-        SearchAdapter searchAdapter = new SearchAdapter(mProducts, this);
-        recyclerView.setAdapter(searchAdapter);
+        mSearchAdapter = new SearchAdapter(mProducts, this);
+        recyclerView.setAdapter(mSearchAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void setupSearch() {
-        // TODO: Implement some sort of search system
-        // TODO: Possibly make a class that handles all of the search functionality since it shows
-        //  up throughout most of the app
         SearchView searchView = findViewById(R.id.search);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
 
-        // TODO: Change this from onClickListener to a listener that activates when user searches
-        //  for a term
-        searchView.setOnClickListener(v -> {
-            Intent intent = new Intent(this, SearchActivity.class);
-            startActivity(intent);
+            @Override
+            public boolean onQueryTextChange(String s) {
+                mSearchAdapter.getFilter().filter(s);
+                return false;
+            }
         });
+
+        Intent intent = getIntent();
+        String extra = intent.getStringExtra("SEARCH_EXTRA");
+        if (extra != null && extra.length() != 0) {
+            mSearchAdapter.getFilter().filter(extra);
+        }
     }
 }
