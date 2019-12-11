@@ -13,7 +13,7 @@ public class Product {
     // Constructor(s) here
     public Product(String name, String description, double price, int pid, String imageURL) {
         this.name = name;
-        this.description = description;
+        this.description = description = "Whats there to see? Stuff it in your face!";
         this.imageURL = imageURL;
         this.price = price;
         this.pid = pid;
