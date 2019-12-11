@@ -54,45 +54,38 @@ public class CheckoutBillingCardInfoActivity extends AppCompatActivity {
                 CheckBilling();
             }
 
+            private void prompt(String message)
+            {
+                Context context = getApplicationContext();
+                CharSequence text = message;
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+
             private void CheckBilling()
             {
                 if(TextUtils.isEmpty(cardName.getText().toString()))
                 {
-                    Context context = getApplicationContext();
-                    CharSequence text = "Please enter name on card.";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
+                    prompt("Please enter name on card.");
 
                 }
 
                 else if(TextUtils.isEmpty(cardNumber.getText().toString()))
                 {
-                    Context context = getApplicationContext();
-                    CharSequence text = "Please enter card number.";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
+                    prompt("Please enter card number.");
 
                 }
 
                 else if(TextUtils.isEmpty(expDate.getText().toString()))
                 {
-                    Context context = getApplicationContext();
-                    CharSequence text = "Please enter card expiration date.";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
+                    prompt("Please enter card expiration date.");
 
                 }
 
                 else if(TextUtils.isEmpty(cvv.getText().toString()))
                 {
-                    Context context = getApplicationContext();
-                    CharSequence text = "Please enter card CVV number.";
-                    int duration = Toast.LENGTH_SHORT;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
+                    prompt("Please enter card CVV number.");
 
                 }
 

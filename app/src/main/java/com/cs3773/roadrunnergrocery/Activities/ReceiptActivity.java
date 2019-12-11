@@ -16,8 +16,7 @@ public class ReceiptActivity extends AppCompatActivity {
 
     private TextView fullNameTextView, phoneNumberTextView, homeAddressTextView
                     , cityNameTextView, zipCodeTextView, stateTextView
-                    , cardNameTextView, cardNumberTextView, expDateTextView
-                    , cvvTextView
+                    , cardNameTextView, cardNumberTextView
                     , billingFullNameTextView, billingPhoneNumberTextView, billingHomeAddressTextView
                     , billingCityNameTextView, billingZipCodeTextView, billingStateTextView;
 
@@ -27,8 +26,6 @@ public class ReceiptActivity extends AppCompatActivity {
     public static final String PREFS_SHIPPING_INFO = "userShippingInfo";
     public static final String PREFS_CHECKBOX_BOOL = "checkBoxBool";
     public static final String PREFS_BILLING_INFO = "userBillingInfo";
-
-    //TODO: Do we need to show card info.?
     public static final String PREFS_CREDIT_CARD_INFO = "userCCInfo";
 
 
