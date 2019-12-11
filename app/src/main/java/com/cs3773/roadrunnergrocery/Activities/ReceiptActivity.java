@@ -1,6 +1,12 @@
 package com.cs3773.roadrunnergrocery.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.cs3773.roadrunnergrocery.Adapters.CartAdapter;
+import com.cs3773.roadrunnergrocery.Models.Cart;
+import com.cs3773.roadrunnergrocery.Models.ProductPair;
 import com.cs3773.roadrunnergrocery.R;
 
 import android.content.Context;
@@ -11,6 +17,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class ReceiptActivity extends AppCompatActivity {
 
@@ -35,6 +43,19 @@ public class ReceiptActivity extends AppCompatActivity {
         setContentView(R.layout.activity_receipt);
         setUserInfoViews();
         setUpOnClickButtonAction();
+        setUpCartDetails();
+    }
+
+    private void setUpCartDetails() {
+        List<ProductPair> mProducts;
+        RecyclerView recyclerView = findViewById(R.id.cart_recycler);
+
+        Cart cart = Cart.getInstance();
+        mProducts = cart.getItems();
+
+        CartAdapter cartAdapter = new CartAdapter(mProducts, this);
+        recyclerView.setAdapter(cartAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void setUpOnClickButtonAction()
