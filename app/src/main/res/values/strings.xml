@@ -9,6 +9,7 @@
     <string name="produce">Produce</string>
     <string name="see_more">See More</string>
     <string name="checkout">Checkout</string>
+<<<<<<< HEAD
     <string name="FullName">Full Name</string>
     <string name="phoneNUmber">Phone Number</string>
     <string name="address">Home Adress</string>
@@ -19,4 +20,7 @@
     <string name="cardNumber">Card Number</string>
     <string name="expDate">Card Expiration Date (e.g. MM/YYYY)</string>
     <string name="cvv">CVV</string>
+=======
+    <string name="add_to_cart">Add to Cart</string>
+>>>>>>> master
 </resources>

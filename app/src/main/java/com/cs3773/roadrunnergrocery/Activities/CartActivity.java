@@ -2,14 +2,15 @@ package com.cs3773.roadrunnergrocery.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cs3773.roadrunnergrocery.Adapters.CartAdapter;
+import com.cs3773.roadrunnergrocery.Models.Cart;
 import com.cs3773.roadrunnergrocery.Models.ProductBase;
 import com.cs3773.roadrunnergrocery.Models.ProductPair;
 import com.cs3773.roadrunnergrocery.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.Nullable;
@@ -32,7 +33,7 @@ public class CartActivity extends AppCompatActivity {
         mProductBase = new ProductBase();
         setupRecyclerView();
         setupCheckoutButton();
-
+        setupTotalPrice();
     }
 
     //Other methods here
@@ -50,10 +51,8 @@ public class CartActivity extends AppCompatActivity {
     private void setupRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.cart_recycler);
 
-        // TODO: Get list of customers ProductPairs in their cart
-        // Just a reminder that a ProductPair is simply a product with a count of how many the
-        //     customer wants
-        mProducts = new ArrayList<>();
+        Cart cart = Cart.getInstance();
+        mProducts = cart.getItems();
 
         CartAdapter cartAdapter = new CartAdapter(mProducts, this);
         recyclerView.setAdapter(cartAdapter);
@@ -61,6 +60,12 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void setupTotalPrice() {
-        //TODO: have this method take the prices from all items and add them up
+        Cart cart = Cart.getInstance();
+        double total = 0;
+        for (ProductPair pp : cart.getItems()) {
+            total += pp.getProduct().getPrice() * pp.getQuantity();
+        }
+        TextView totalPrice = findViewById(R.id.total_price);
+        totalPrice.setText(String.format("Cart Total: $%.2f", total));
     }
 }

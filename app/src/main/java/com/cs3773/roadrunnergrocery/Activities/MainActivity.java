@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         // TODO: Set up the two Promotion views with random items
     }
 
-
     // Other methods here
     private void setupAccountIcon() {
         mAccountIcon = findViewById(R.id.account_icon);
@@ -75,14 +74,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupSearch() {
-        // TODO: Implement some sort of search system
         SearchView searchView = findViewById(R.id.search);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                intent.putExtra("SEARCH_EXTRA", s);
+                startActivity(intent);
+                return false;
+            }
 
-        // TODO: Change this from onClickListener to a listener that activates when user searches
-        //  for a term
-        searchView.setOnClickListener(v -> {
-            Intent intent = new Intent(this, SearchActivity.class);
-            startActivity(intent);
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
         });
     }
 }
