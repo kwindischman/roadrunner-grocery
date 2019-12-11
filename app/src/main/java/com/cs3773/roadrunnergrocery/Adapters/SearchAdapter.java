@@ -133,7 +133,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
                 for (Product product : mProductListFull) {
-                    if (product.getName().toLowerCase().contains(filterPattern)) {
+                    if (product.getName().toLowerCase().contains(filterPattern)
+                            || product.getTag().toLowerCase().contains(filterPattern)) {
                         filteredList.add(product);
                     }
                 }
