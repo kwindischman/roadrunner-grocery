@@ -20,11 +20,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class CartActivity extends AppCompatActivity {
 
-    // Variables here
     List<ProductPair> mProducts;
     ProductBase mProductBase;
 
-    // Lifecycle methods here
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +34,6 @@ public class CartActivity extends AppCompatActivity {
         setupTotalPrice();
     }
 
-    //Other methods here
     private void setupCheckoutButton() {
         findViewById(R.id.checkout_layout).setOnClickListener(v -> {
             if (mProducts.size() > 0) {

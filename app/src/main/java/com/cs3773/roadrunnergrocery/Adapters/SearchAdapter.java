@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.cs3773.roadrunnergrocery.Models.Cart;
 import com.cs3773.roadrunnergrocery.Models.Product;
 import com.cs3773.roadrunnergrocery.R;
@@ -47,7 +49,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
         ImageView image = holder.image;
         int imageResource = mContext.getResources().getIdentifier(product.getImageURL(), null, mContext.getPackageName());
-        image.setImageDrawable(mContext.getResources().getDrawable(imageResource));
+        Glide.with(mContext).load(mContext.getResources().getDrawable(imageResource))
+                .apply(RequestOptions.circleCropTransform()).into(image);
 
         TextView name = holder.name;
         name.setText(product.getName());
@@ -130,7 +133,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
                 for (Product product : mProductListFull) {
-                    if (product.getName().toLowerCase().contains(filterPattern)) {
+                    if (product.getName().toLowerCase().contains(filterPattern)
+                            || product.getTag().toLowerCase().contains(filterPattern)) {
                         filteredList.add(product);
                     }
                 }

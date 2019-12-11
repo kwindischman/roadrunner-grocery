@@ -8,6 +8,7 @@ public class Product {
     private String imageURL;
     private double price;
     private int pid;
+    private String tag = "";
 
     // Constructor(s) here
     public Product(String name, String description, double price, int pid, String imageURL) {
@@ -18,12 +19,29 @@ public class Product {
         this.pid = pid;
     }
 
+    public Product(String name, String description, double price, int pid, String imageURL, String tag) {
+        this.name = name;
+        this.description = description;
+        this.imageURL = imageURL;
+        this.price = price;
+        this.pid = pid;
+        this.tag = tag;
+    }
+
     public Product(String name, String description, double price, int pid) {
         this(name, description, price, pid, "@drawable/placeholder_image.webp");
     }
 
 
     // Methods here
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
     public String getName() {
         return name;
     }

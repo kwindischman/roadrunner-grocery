@@ -51,16 +51,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupProducts() {
         findViewById(R.id.product_image_1).setOnClickListener(v -> {
-            // Open Search activity and show produce
+            Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+            intent.putExtra("SEARCH_EXTRA", "produce");
+            startActivity(intent);
         });
         findViewById(R.id.product_image_2).setOnClickListener(v -> {
-            // Open Search activity and show meats
+            Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+            intent.putExtra("SEARCH_EXTRA", "meat");
+            startActivity(intent);
         });
         findViewById(R.id.product_image_3).setOnClickListener(v -> {
-            // Open Search activity and show snacks
+            Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+            intent.putExtra("SEARCH_EXTRA", "snacks");
+            startActivity(intent);
         });
         findViewById(R.id.product_image_4).setOnClickListener(v -> {
-            // Open Search activity and show frozen foods
+            Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+            intent.putExtra("SEARCH_EXTRA", "frozen");
+            startActivity(intent);
         });
     }
 
